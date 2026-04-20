@@ -1,0 +1,528 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+      body {
+        background-image: url("./pexels-clickerhappy-9315.jpg");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+      
+      }
+      h1 {
+        
+        color: rgb(253, 108, 4);
+      }
+    
+      #imgfst {
+        justify-self: center;
+        width: 200px ;
+        height: 180px;
+        margin-bottom: 15px;
+      
+       
+      }
+
+      #table {
+        display: grid;
+        align-items: center;
+        justify-content: center;
+      }
+      #table th {
+        background-color: black;
+        color: white;
+      }
+      #table tr {
+        background-color: rgb(59, 65, 63);
+      }
+      #table tr,
+      td {
+        background-color: rgb(100, 44, 4);
+        padding: 30px 30px 30px 30px;
+      }
+
+      #resultTotal {
+        align-items: center;
+        justify-content: center;
+        display: grid;
+        padding: 5px 50px;
+      }
+      #resultTotal p {
+        background-color: rgb(247, 114, 19);
+        color: black;
+        padding: 30px 50px;
+      }
+
+      button {
+        background-color: rgb(24, 10, 1);
+        padding: 20px 20px 20px 20px;
+        border-radius: 5px 5px 5px 5px;
+        border: 2px 2px 2px 2px;
+        cursor: pointer;
+        color: aliceblue;
+      }
+
+      button:hover {
+        color: orange;
+      }
+      button:active {
+        color: rgb(247, 242, 240);
+      }
+      h2 {
+        align-items: center;
+        justify-content: center;
+        display: flex;
+        color: white;
+        font-size: xx-large;
+      }
+
+      #card-container {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2px;
+        height: auto;
+        width: auto;
+        padding: 40px;
+      }
+
+      img {
+        object-fit: cover;
+        display: grid;
+        width: 200px;
+        height: 300px;
+        border-radius: 20px;
+        align-items: center;
+        justify-content: center;
+        background-color: rgb(75, 34, 5);
+      }
+
+      h2 {
+        color: rgb(247, 244, 243);
+      }
+      #nav-bar {
+        background-color: rgb(7, 3, 0);
+        position: sticky;
+        top: 0; /* Stays at 0 pixels from the top of the viewport */
+        width: 100%; /* Ensures it spans the full width of the screen */
+        z-index: 1000; /* Ensures it stays above other content */
+      }
+
+      #nav-bar ul,
+      li,
+      a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 10px 16px;
+        color: chocolate;
+        justify-self: right;
+        list-style-type: none;
+        text-decoration: none;
+      }
+
+      #nav-bar :hover {
+        cursor: pointer;
+        color: rgb(194, 152, 122);
+      }
+
+      #receipt {
+        border: 1px solid black;
+        padding: 15px;
+        width: 250px;
+        margin-top: 10px;
+        background: rgb(44, 21, 5);
+        border-radius: 20px;
+        color: chocolate;
+      }
+
+      /* animation */
+      button {
+        transition:
+          transform 0.1s ease,
+          box-shadow 0.1s ease;
+      }
+
+      /* animation effect */
+      button.clicked {
+        transform: scale(0.9);
+        box-shadow: 0 3px 8px rgba(0, 0, 0, 0.3);
+      }
+
+      /* print receipt */
+      @media print {
+        body * {
+          display: none;
+        }
+
+        #receipt,
+        #receipt * {
+          display: block;
+        }
+
+        #receipt {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 50%;
+        }
+            }
+
+            
+               #footer {
+        background-color: black;
+        color: white;
+        align-items: center;
+        justify-content: left;
+        display: flex;
+       }
+        #container-foot {
+             grid-template-columns: repeat(4,1fr);
+          display: flex;
+     
+          justify-content: space-between; 
+          flex-wrap: wrap;
+          gap: 50px;
+          margin-left: 10%;
+
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  #container-foot {
+    flex-direction: column;
+    gap: 50px;
+  }
+}
+
+        
+         #point-one {
+          background-color: rgb(250, 117, 22);
+         }
+        #point-socials {
+          background-color: rgb(129, 57, 5);
+        }
+       #point-three {
+        background-color: rgb(134, 90, 58);
+       }
+        
+      #Contact {
+        background-color: rgb(61, 26, 2);
+      } 
+      #hr {
+        align-items: center;
+        justify-content: center;
+        display:block;
+        background-color: white;
+        color: black;
+        padding-left: 40%;
+      }
+
+      improvements to make responsiveness
+input, button {
+  padding: 10px;
+  font-size: 16px;
+  width: 100%;
+  max-width: 200px;
+}
+#card-container img {
+  width: 300px;
+  max-width: 100%;
+ 
+}
+
+   /* MAKING THIS PAGE RESPONSIVE */
+   /* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Images responsive */
+img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+/* NAVBAR */
+#nav-bar ul {
+  display: flex;
+  justify-content: space-around;
+  list-style: none;
+  background: rgb(65, 28, 2);
+  padding: 15px;
+}
+
+#nav-bar a {
+  color: rgb(245, 106, 6);
+  text-decoration: none;
+}
+
+/* HEADER TEXT */
+h1 {
+  text-align: center;
+  padding: 20px;
+}
+
+/* TOP IMAGE */
+#imgfst {
+  text-align: center;
+  padding: 10px;
+}
+
+/* CARD CONTAINER */
+#card-container {
+  display: flex;
+  gap: 20px;
+  padding: 20px;
+  align-items: center;
+}
+
+/* TABLE */
+#table {
+  flex: 2;
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th, td {
+  border: 1px solid #ccc;
+  padding: 10px;
+  text-align: center;
+}
+
+/* SIDE IMAGES */
+#card-container img {
+  flex: 1;
+}
+
+/* BUTTON AREA */
+#resultTotal {
+  text-align: center;
+  margin: 20px;
+}
+
+button {
+  padding: 10px 20px;
+  margin: 10px;
+  cursor: pointer;
+}
+
+/* RECEIPT */
+#receipt {
+  padding: 20px;
+  text-align: center;
+}
+
+/* FOOTER */
+#container-foot {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  background: #222;
+  color: white;
+  padding: 20px;
+}
+
+#container-foot > div {
+  flex: 1 1 200px;
+}
+
+/* ========================= */
+/* 📱 MOBILE RESPONSIVE PART */
+/* ========================= */
+@media (max-width: 768px) {
+
+  /* Stack navbar */
+  #nav-bar ul {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  #nav-bar li {
+    margin: 10px 0;
+  }
+
+  /* Stack main content */
+  #card-container {
+    flex-direction: column;
+  }
+
+  /* Make table scrollable */
+  #table {
+    width: 100%;
+  }
+
+  table {
+    font-size: 14px;
+  }
+
+  /* Buttons full width */
+  button {
+    width: 90%;
+  }
+
+  /* Reduce heading size */
+  h1 {
+    font-size: 20px;
+  }
+}
+
+
+
+
+       
+    </style>
+  </head>
+  <canvas id="cursorCanvas"></canvas>
+  <body>
+    <div id="nav-bar">
+      <ul>
+        <li><a href="coffee.html">HOME</a></li>
+        <li><a href="about us.html">ABOUT US</a></li>
+        <li><a href="product.html">PRODUCTS</a></li>
+        <li><a href="branches.html">BRANCHES</a></li>
+      </ul>
+    </div>
+
+      <h1>
+        <b>Form Ya Coffee Kajoint</b> <br />
+        <b>A sip of coffee awakens the day☕</b>
+      </h1>
+       <div id="imgfst">
+            <img src="./Barrister Serving Coffee.jpg" alt="">
+            </div>
+           
+         
+    <div id="card-container">
+      <div id="table">
+        <table>
+          <tr>
+            <th>Coffee Type</th>
+            <th>Price</th>
+            <th>Quantity</th>
+          </tr>
+          <tr>
+            <td>Cappuccino</td>
+            <td>Ksh.250.00</td>
+            <td>
+              <input
+                type="number"
+                id="qty1"
+                value="0"
+                 min="0"
+                placeholder="Enter Quantity"
+              />
+            </td>
+          </tr>
+          <tr>
+            <td>Caffe latte</td>
+            <td>Ksh.300.00</td>
+            <td>
+              <input
+                type="number"
+                id="qty2"
+                value="0"
+                placeholder="Enter Quantity"
+              />
+            </td>
+          </tr>
+          <tr>
+            <td>White Coffee</td>
+            <td>Ksh.150.00</td>
+            <td>
+              <input
+                type="number"
+                id="qty3"
+                value="0"
+                placeholder="Enter Quantity"
+              />
+            </td>
+          </tr>
+        </table>
+      </div>
+
+      <div>
+        <img src="./unique coffeMug.jpg" alt="profile-img1" />
+      </div>
+       <div>
+              <img src="./takingCoffee.jpg" alt="profile-img2" />
+      </div>
+       </div>
+
+    <div id="resultTotal">
+      <button onclick="total()">Total Cost</button>
+      <button onclick="submitOrder()">Submit Order</button>
+      <p id="total">Ksh.0.00</p>
+    </div>
+
+    <div id="receipt">
+      <h2>Form Ya Coffee Kajoint Receipt</h2>
+      <p id="receiptItems"></p>
+      <p id="receiptTotal"></p>
+
+      <button onclick="printReceipt()">Print Receipt</button>
+    </div>
+
+            <footer>
+          <div id="footer">
+         <div id="container-foot">
+             <div id="point-one">  
+                <p><b>OPERATION HOURS</b></p>
+                Monday-Wednesday 8:00am - 10:00pm.
+                <br>
+                Thursday-Friday  9:00am - 10:00pm.
+                <br>
+                Saturday         10:00am -11;59pm.
+                <br>
+                We are closed on all National Holidays.
+
+             </div>
+                <div id="point-socials">
+                   <p><b>Our Social Media Handles</b>.</p>
+                 
+                  <a href=""><i class="fab fa-github"></i>Kajoint Developers</a>
+        <a href=""><i class="fab fa-facebook"> Sip Kajoint</i></a>
+        <a href=""><i class="fab fa-whatsapp"> +254716499037</i></a>
+        <a href=""><i class="fab fa-instagram"> @Kajoint Sip</i></a>
+
+                </div>
+                <div id="point-three">
+                   <p><b>Quick Links</b></p>
+                   Home <br>
+                   Products <br>
+                   Branches <br>
+                   About-Us
+                </div>
+                <div id="Contact">
+                <p><b>Contct Info:</b></p>
+                    <br>
+                   Tell: +254716499037
+                   <br>
+                   Email: kajointcofee@gmail.com
+                   <br>
+                </div>
+         </div>     
+      </footer>
+
+       <div id="hr">
+     <hr> &copy; <b>Them Masinde Web Developer: 2026. </b>
+  </div> 
+    
+  </body>
+
+  <script src="./artcafee-coffee.js"></script>
+</html>

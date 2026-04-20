@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BNB Website</title>
+<style>
+  body {
+  background-image: url("./bac-hotel.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  }
+ .container {
+  display: grid;
+  grid-template-areas: 
+    "header header logo"
+    "nav nav nav"
+    "sidebar main img"
+    "footer footer footer";
+  grid-template-columns: 200px 1fr 1fr;
+  grid-template-rows: auto auto 1fr auto;
+  height: 100vh;
+}
+
+
+.logo {
+  display: flex;
+  grid-area: logo;
+  justify-self: end;}
+
+  .header {
+  grid-area: header; 
+color: bisque;
+}
+
+.footer {
+  grid-area: footer;
+  justify-self: center;
+position: sticky;
+}
+
+
+  .footer b {
+    color: chocolate;
+  }
+
+  .services {
+    display: grid;
+     padding: 50px;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+     height: auto;
+     width: auto;
+     margin-bottom: 80px;
+     gap: 30
+     px;
+  }
+  .card1 {
+    background-color: rgb(95, 53, 2);
+    border-radius: 4px;
+    box-shadow: 0 4px 10px burlywood;
+    width: 30vw;
+    height: 40vh;
+     border-radius: 4px;
+    box-shadow: 0 4px 10px rgb(63, 49, 30);
+  }
+  .card2 {
+      background-color: rgb(122, 85, 39);
+    border-radius: 4px;
+    box-shadow: 0 4px 10px rgb(48, 28, 1);
+    width: 45
+    vw;
+    height: 40vh;
+
+  }
+  p {
+    color: rgb(221, 218, 213);
+  }
+  .bookings {
+ border-radius: 4px;
+    box-shadow: 0 4px 10px rgb(250, 220, 175);
+    background-color: rgb(141, 113, 73);
+    margin-left: 80px;
+    margin-right: 40px;
+     align-items: center;
+    justify-content: center;
+  }
+
+  
+  .client {
+     background-color: rgb(151, 113, 66);
+    border-radius: 4px;
+    width: 30vw;
+    height: 30vh;
+     border-radius: 4px;
+    box-shadow: 0 4px 10px rgb(63, 49, 30);
+    margin-left: 100px;
+    align-items: center;
+    justify-content: center;
+  }
+  .card3 p {
+    color:rgb(245, 106, 7);
+  }
+
+    </style>
+
+
+</head>
+<body>
+<div class="container">
+   <header class="header"><b>Them-Masinde-lodge <br>The City Palace</b></header>
+
+<img class="logo" src="./logo-hotel.jpg" alt="" width="35%" height="35%">
+
+
+<div class="services">
+   <div class="card1">
+     <h1>We offer the following services</h1>
+   <ul>
+    <li>Massage sessions</li>
+    <li>Accomodation rooms</li>
+    <li>Gymnastic sessions</li>
+    <li>Meeting rooms</li>
+     </ul>
+   </div>
+   <div class="card2">
+    <h2>We have partnerd with the below organizations</h2>
+     <ul>
+      <li>Chicken Inn Africa</li>
+      <li>Old Mutual money market</li>
+      <li>CIC Insurance</li>
+      <li>Unique restaurant world</li>
+     </ul>
+   </div>
+   <div class="card3">
+    <img src="./amb-hotel.jpg" alt="" width="400" height="230">
+     <p><b>5-Star-ACCOMODATION</b></p>
+   </div>
+  
+   <div class="bookings">
+    <h4>Booking info</h4>
+    <select name="" id="">
+      <option value="">Cooporate</option>
+      <option value="">Family</option>
+      <option value="">Party</option>
+      <option value="">Couple</option>
+      <option value="">Individual</option>
+    </select>
+
+   </div>
+   <div class="client">
+      <b> R.s.v.p</b> <br>
+      0716499037 <br>
+      0780847711 <br>
+      P.o.Box 218-00510 <br>
+      Email jmasinderestaurant@gmail.com
+
+      <p><b>Comment</b></p>
+      <textarea name="" id=""></textarea>
+
+   </div>
+   
+</div>
+
+
+
+
+
+
+   <footer class="footer">
+   <b>Welcome Home Of Wonderful Ambience</b>
+
+   </footer>
+</div>
+
+ 
+
+
+
+
+    
+</body>
+</html>
+
