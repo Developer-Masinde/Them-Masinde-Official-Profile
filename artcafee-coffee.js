@@ -34,19 +34,19 @@ function submitOrder() {
 
   if (qty1 > 0) {
     let cost = qty1 * 250;
-    receipt += "Cappuccino x " + qty1 + " = Ksh. " + cost + "<br>";
+    receipt += "Cappuccino(250) x " + qty1 + " = Ksh. " + cost + "<br>";
     total += cost;
   }
 
   if (qty2 > 0) {
     let cost = qty2 * 300;
-    receipt += "Caffe Latte x " + qty2 + " = Ksh. " + cost + "<br>";
+    receipt += "Caffe Latte(300) x " + qty2 + " = Ksh. " + cost + "<br>";
     total += cost;
   }
 
   if (qty3 > 0) {
     let cost = qty3 * 150;
-    receipt += "White Coffee x " + qty3 + " = Ksh. " + cost + "<br>";
+    receipt += "White Coffee(150) x " + qty3 + " = Ksh. " + cost + "<br>";
     total += cost;
   }
 
@@ -68,4 +68,44 @@ function printReceipt() {
   window.print();
 }
 
+// MPESA SERVICES
+function payWithMpesa() {
+  let phone = document.getElementById("phone").value;
+  let totalText = document.getElementById("total").innerText;
 
+  let amount = totalText.replace("Ksh.", "").replace(".00", "");
+
+  if (phone === "") {
+    alert("Please enter your M-Pesa number");
+    return;
+  }
+
+  if (amount === "0") {
+    alert("Please calculate total cost before paying");
+    return;
+  }
+
+  document.getElementById("paymentMessage").innerText =
+    "M-Pesa payment request sent to " + phone;
+
+  // Example backend request
+  fetch("http://localhost:5000/mpesa/stkpush", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify({
+      phone: phone,
+      amount: amount
+    })
+  })
+    .then(response => response.json())
+    .then(data => {
+      document.getElementById("paymentMessage").innerText = data.message;
+    })
+    .catch(error => {
+      console.log(error);
+      document.getElementById("paymentMessage").innerText =
+        "Payment failed. Try again.";
+    });
+}

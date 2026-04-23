@@ -381,6 +381,38 @@ button {
   }
 }
 
+/* MPESA SERVICES */
+#mpesa-payment {
+  margin: 15px auto;
+  padding: 15px;
+  width: 30%;
+  background-color: #f4f4f4;
+  border-radius: 10px;
+  text-align: center;
+}
+
+#mpesa-payment input {
+  width: 50%;
+  padding: 10px;
+  margin: 5px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+#mpesa-payment button {
+  padding: 7px 15px;
+  background-color: green;
+  color: chocolate;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#paymentMessage {
+  margin-top: 15px;
+  font-weight: bold;
+  color: green;
+}
 
 
 
@@ -468,6 +500,16 @@ button {
       <button onclick="submitOrder()">Submit Order</button>
       <p id="total">Ksh.0.00</p>
     </div>
+    <div id="mpesa-payment">
+  <h2>Pay with M-Pesa</h2>
+
+  <input type="text" id="phone" placeholder="Enter M-Pesa Number" />
+
+  <button onclick="payWithMpesa()">Pay with M-Pesa</button>
+
+  <p id="paymentMessage"></p>
+</div>
+```
 
     <div id="receipt">
       <h2>Form Ya Coffee Kajoint Receipt</h2>
