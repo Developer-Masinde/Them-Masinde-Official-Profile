@@ -109,10 +109,11 @@
       }
       #nav-bar {
         background-color: rgb(7, 3, 0);
-        position: sticky;
+        position: fixed; /* fixes the nabar to the top of the page */ 
         top: 0; /* Stays at 0 pixels from the top of the viewport */
         width: 100%; /* Ensures it spans the full width of the screen */
         z-index: 1000; /* Ensures it stays above other content */
+        
       }
 
       #nav-bar ul,
@@ -126,6 +127,7 @@
         justify-self: right;
         list-style-type: none;
         text-decoration: none;
+       
       }
 
       #nav-bar :hover {
@@ -133,15 +135,7 @@
         color: rgb(194, 152, 122);
       }
 
-      #receipt {
-        border: 1px solid black;
-        padding: 15px;
-        width: 250px;
-        margin-top: 10px;
-        background: rgb(44, 21, 5);
-        border-radius: 20px;
-        color: chocolate;
-      }
+
 
       /* animation */
       button {
@@ -156,24 +150,7 @@
         box-shadow: 0 3px 8px rgba(0, 0, 0, 0.3);
       }
 
-      /* print receipt */
-      @media print {
-        body * {
-          display: none;
-        }
 
-        #receipt,
-        #receipt * {
-          display: block;
-        }
-
-        #receipt {
-          position: absolute;
-          top: 0;
-          left: 0;
-          width: 50%;
-        }
-            }
 
             
                #footer {
@@ -323,9 +300,51 @@ button {
 
 /* RECEIPT */
 #receipt {
-  padding: 20px;
+  padding: 25px;
   text-align: center;
+  background-image:url("./blackCupCoffee.jpg") ;
+
+  background-position: center;
+  background-size:cover ;
+  padding: 15px;
+  border: 3px solid chocolate;
+  width: 250px;
+  margin-top: 5px;
+  border-radius: 30px;
+  color: chocolate;
+   font-size:18px;
 }
+      /* print receipt */
+      @media print {
+        body * {
+          display: none !important;
+        }
+
+            
+       
+        #receipt * {
+        
+              display: block !important;
+
+        }
+        #receipt {
+           display: block !important;
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 50%;
+          height: auto;
+           background-image: url("blackCupCoffee.jpg");
+          background-repeat: no-repeat;
+          background-size: cover;
+          background-position: center;
+             -webkit-print-color-adjust: exact;
+              print-color-adjust: exact;
+        }
+        
+     
+            }
+   
 
 /* FOOTER */
 #container-foot {
@@ -512,11 +531,11 @@ button {
 ```
 
     <div id="receipt">
-      <h2>Form Ya Coffee Kajoint Receipt</h2>
+      <h2><b>Coffee Kajoint rcpt</b></h2>
       <p id="receiptItems"></p>
       <p id="receiptTotal"></p>
 
-      <button onclick="printReceipt()">Print Receipt</button>
+      <button onclick="printReceipt()">Our Pleasure!</button>
     </div>
 
             <footer>

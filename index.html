@@ -9,7 +9,7 @@
 
   <style>
    body {
-    background-image: url("./unique\ web\ background.jpg");
+    background-image: url("./blue\ standard\ background.jpg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -52,23 +52,28 @@
     
      .ME {
       justify-self: center;
+      margin-left: 5.5%;
+     
         }
 
       .ME img {
-  width: 200px;
-  height: 200px;
+     width: 220px;
+    height: auto;
   border-radius: 50%; /* circle */
   object-fit: cover;
 
-  border: 5px solid #6c63ff;
+  border: 10px solid #6c63ff;
 
   box-shadow: 0 10px 25px rgba(0,0,0,0.2);
 
-  transition: 0.3s ease;
+  transition: 0.4s ease;
+    
 }
    .ME img:hover {
   transform: scale(1.05);
   box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+  cursor: pointer;
+  
 }
       
       
@@ -106,7 +111,7 @@
      .container-2 {
         display: flex;
       grid-template-columns: repeat(2,1fr);
-      gap: 20px;
+      gap: 15px;
       margin: 30px;
       align-items: center;
       display: flex;
@@ -129,17 +134,17 @@
       justify-content: center;
       background-color: rgb(29, 27, 24);
       display: inline-flex;
+      font-size: 18px;
+      cursor: pointer;
 
      }
      .location {
-  color: rgb(240, 152, 38);
-  font-size: 30px;
+  color: rgb(175, 113, 32);
+   cursor: pointer;
+
   margin-left: 0;
 }
 
-         .location i {
-         margin-right: 2px 2px 2px 2px;
-}
 
      .container-1{
       display: grid;
@@ -268,7 +273,7 @@
         /* MORE-STYLINGS ON IMAGE */
         /* Optional glow ring */
 .ME {
-  padding: 8px;
+  padding: 6px;
   border-radius: 50%;
   background: linear-gradient(135deg, #6c63ff, #00c9a7);
   display: inline-block;
@@ -306,7 +311,62 @@ h2 {
   margin-top: 30px;
   letter-spacing: 1px;
 }
+#Dev{
+  display: flex;
+ margin-left: 35%;
+  align-items: center;
+  justify-content: center;
+  background-image: url("./Real\ Paint.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  display: inline-flex;
+  border-radius: 10px;
+  text-align: center;
+  cursor: pointer;
+   
+  transition: 0.4s ease;
 
+}
+#Dev h1 {
+  color: black;
+  cursor: pointer;
+  display: inline-block;
+  margin: 0;
+  
+}
+#Dev:hover {
+  transform: scale(1.05);
+  box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+  cursor: pointer;
+  
+}
+#Web {
+   display: flex;
+ margin-left: 32%;
+  align-items: center;
+  justify-content: center;
+  background-image: url("./Deep\ paint.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  display: inline-flex;
+  border-radius: 10px;
+  margin-top: 3px;
+  margin-bottom: 5px;
+  cursor: pointer;
+  transition: 0.4s ease;
+
+}
+#Web h2 {
+  color: yellow;
+}
+#Web:hover {
+  transform: scale(1.05);
+  box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+  cursor: pointer;
+  
+}
 
   </style>
 
@@ -326,7 +386,7 @@ h2 {
           </ul>
         </nav-bar>
            
-           <h1><b>I am a Full stack WEB developer</b></h1>
+         
          <div class="container-2">
           
           <div class="ME">
@@ -341,9 +401,13 @@ h2 {
 
           </div>
          </div>
-
+            <div id="Dev"><h1><b>Full Stack Developer</b></h1>
+            </div>
+            <div id="Web">
+               <h2><b>Check My World Of Web</b></h2>
+            </div>
         
-          <div><h2>Check My World of Web</h2></div>
+          
 
           <div class="container-1">
                 <div class="MORE">
