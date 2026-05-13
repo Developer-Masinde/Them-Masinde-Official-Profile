@@ -1,0 +1,312 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+      <!-- CD ICONS -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+
+    <style>
+      body {
+        background-color: rgb(20, 10, 3);
+      }
+           
+      #nav-bar {
+        background-color: rgb(155, 72, 12);
+          position: sticky;
+        top: 0; /* Stays at 0 pixels from the top of the viewport */
+        width: 100%; /* Ensures it spans the full width of the screen */
+        z-index: 1000; /* Ensures it stays above other content */
+      }
+      #nav-bar ul,
+      li,
+      a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 10px 16px;
+        color: rgb(241, 234, 228);
+        justify-self: center;
+        list-style-type: none;
+        text-decoration: none;
+      }
+      #nav-bar :hover {
+        cursor: pointer;
+        color: rgb(93, 94, 92);
+      }
+      #branches {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+        width: auto;
+        height: auto;
+      }
+      h1 {
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      img {
+        object-fit: cover;
+        display: block;
+        width: 100%;
+        height: 80%;
+        border-radius: 20px;
+        align-items: center;
+        justify-content: center;
+      }
+
+      #branches {
+        color: whitesmoke;
+      }
+
+               #footer {
+        background-color: black;
+        color: white;
+        align-items: center;
+        justify-content: left;
+        display: flex;
+       }
+        #container-foot {
+             grid-template-columns: repeat(4,1fr);
+          display: grid;
+          gap: 40px;
+          margin-left: 40px; 
+        }
+         #point-one {
+          background-color: rgb(250, 117, 22);
+         }
+        #point-socials {
+          background-color: rgb(129, 57, 5);
+        }
+       #point-three {
+        background-color: rgb(134, 90, 58);
+       }
+        
+      #Contact {
+        background-color: rgb(61, 26, 2);
+      } 
+      #hr {
+        align-items: center;
+        justify-content: center;
+        display:block;
+        background-color: white;
+        color: black;
+        padding-left: 40%;
+      }
+      /* MAKING RESPONSIVE */
+      /* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* BODY */
+body {
+  font-family: Arial, sans-serif;
+}
+
+/* NAVBAR */
+#nav-bar ul {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  background: #333;
+  flex-wrap: wrap;
+}
+
+#nav-bar ul li {
+  margin: 10px;
+}
+
+#nav-bar ul li a {
+  color: rgb(240, 105, 8);
+  text-decoration: none;
+  padding: 10px 15px;
+  display: block;
+}
+
+/* TITLE */
+h1 {
+  text-align: center;
+  margin: 20px 0;
+}
+
+/* BRANCHES GRID */
+#branches {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+
+/* EACH BRANCH CARD */
+#branches div {
+  text-align: center;
+}
+
+#branches img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+/* FOOTER */
+#container-foot {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  background: #222;
+  color: white;
+  padding: 20px;
+}
+
+#container-foot div {
+  flex: 1 1 200px;
+  margin: 10px;
+}
+
+/* LINKS */
+#point-socials a {
+  display: block;
+  color: white;
+  text-decoration: none;
+  margin: 5px 0;
+}
+
+/* COPYRIGHT */
+#hr {
+  text-align: center;
+  padding: 10px;
+}
+
+/* 📱 MOBILE RESPONSIVENESS */
+@media (max-width: 768px) {
+
+  /* NAV STACK */
+  #nav-bar ul {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  /* FOOTER STACK */
+  #container-foot {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  /* IMAGE HEIGHT SMALLER */
+  #branches img {
+    height: 180px;
+  }
+}
+   
+    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  </head>
+  <body>
+           <div id="nav-bar">
+
+    <div class="logo">KAJOINT ☕</div>
+
+    <div id="menu-toggle">
+        ☰
+    </div>
+
+    <ul id="nav-links">
+        <li><a href="coffee.html">HOME</a></li>
+        <li><a href="about us.html">ABOUT US</a></li>
+        <li><a href="product.html">PRODUCTS</a></li>
+        <li><a href="branches.html">BRANCHES</a></li>
+    </ul>
+
+</div>
+    <h1>Coffee Kajoint Nationwide Branches</h1>
+    <div id="branches">
+      <div>
+        <img src="./coffee balcony restaurant.jpg" alt="" />
+        <b>NAIVASHA L.ELEMENTAITA</b>
+      </div>
+      <div>
+        <img src="./named smart coffee resto.jpg" alt="" />
+        <b> KILIFI WASWAHILI.</b>
+      </div>
+
+      <div>
+        <img src="./good looking cafe.jpg" alt="" />
+        <b> NAIROBI AGAKHAN.</b>
+      </div>
+
+      <div>
+        <img src="./named coffee curved brand rstoo.jpg" alt="" />
+        <b>KERICHO GOLD</b>
+      </div>
+
+      <div>
+        <img src="./coffee brand name.jpg" alt="" />
+        <b> NAIROBI UPPER HILL.</b>
+      </div>
+
+      <div>
+        <img src="./pexels-yellow-huang-472767430-29501456 (2).jpg" alt="" />
+        <b> KISUMU MILIMANI.</b>
+      </div>
+    </div>
+      
+         <footer>
+          <div id="footer">
+         <div id="container-foot">
+             <div id="point-one">  
+                <p><b>OPERATION HOURS</b></p>
+                Monday-Wednesday 8:00am - 10:00pm.
+                <br>
+                Thursday-Friday  9:00am - 10:00pm.
+                <br>
+                Saturday         10:00am -11;59pm.
+                <br>
+                We are closed on all National Holidays.
+
+             </div>
+                <div id="point-socials">
+                  <p><b>Our Social Media Handles</b>.</p>
+                
+        <a href=""><i class="fab fa-github"></i>Kajoint Developers</a>
+        <a href=""><i class="fab fa-facebook"> Sip Kajoint</i></a>
+        <a href=""><i class="fab fa-whatsapp"> +254716499037</i></a>
+        <a href=""><i class="fab fa-instagram"> @Kajoint Sip</i></a>
+       
+
+                </div>
+                <div id="point-three">
+                   <p><b>Quick Links</b></p>
+                   Home <br>
+                   Products <br>
+                   Branches <br>
+                   About-Us
+                </div>
+                <div id="Contact">
+                <p><b>Contct Info:</b></p>
+                    <br>
+                   Tell: +254716499037
+                   <br>
+                   Email: kajointcofee@gmail.com
+                   <br>
+                </div>
+         </div>     
+      </footer>
+
+  <div id="hr">
+     <hr> &copy; <b>Them Masinde Web Developer: 2026. </b>
+  </div> 
+ 
+  </body>
+  <script
+  src="./hamurgur.js"></script>
+  </html>

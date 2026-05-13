@@ -15,6 +15,8 @@
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
+        padding-top:90px;
+
       
       }
       h1 {
@@ -115,20 +117,138 @@
         z-index: 1000; /* Ensures it stays above other content */
         
       }
+      #nav-bar{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    background-color:rgb(39, 17, 2);
+    padding:15px 25px;
+    position:fixed;
+    top:0;
+    z-index:1000;
+}
 
-      #nav-bar ul,
-      li,
-      a {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        padding: 10px 16px;
-        color: chocolate;
-        justify-self: right;
-        list-style-type: none;
-        text-decoration: none;
-       
-      }
+.logo{
+    color:rgb(179, 115, 70);
+    font-size:25px;
+    font-weight:bold;
+}
+
+#nav-links{
+    
+    gap:25px;
+    list-style:none;
+}
+
+#nav-links li a{
+    color:sandybrown;
+    text-decoration:none;
+    font-size:18px;
+}
+
+#menu-toggle{
+    display:none;
+    font-size:32px;
+    color:white;
+    cursor:pointer;
+}
+
+/* MOBILE RESPONSIVE */
+
+  @media(max-width:768px){
+
+    #menu-toggle{
+        display:block;
+    }
+
+    #nav-links{
+        display:none;
+        flex-direction:column;
+        position:absolute;
+        top:70px;
+        right:0;
+        background:black;
+        width:220px;
+        padding:20px;
+        text-align:center;
+    }
+
+    #nav-links.active{
+        display:flex;
+    }
+
+}
+#nav-links{
+    list-style:none;
+    gap:25px;
+}
+
+/* DESKTOP ONLY */
+
+@media(min-width:769px){
+
+    #nav-links{
+        display:flex;
+    }
+
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+    #menu-toggle{
+        display:block;
+    }
+
+    #nav-links{
+        display:none;
+        flex-direction:column;
+        position:absolute;
+        top:70px;
+        right:0;
+        width:220px;
+        background:black;
+        padding:20px;
+    }
+
+    #nav-links.active{
+        display:flex;
+    }
+}
+/* DESKTOP */
+@media(min-width:769px){
+
+    #nav-links{
+        display:flex;
+    }
+
+}
+
+/* MOBILE */
+@media(max-width:768px){
+
+    #menu-toggle{
+        display:block;
+    }
+
+    #nav-links{
+        display:none;
+        flex-direction:column;
+        position:absolute;
+        top:70px;
+        right:0;
+        width:220px;
+        background:black;
+        padding:20px;
+    }
+
+    #nav-links.active{
+        display:flex;
+    }
+}
+
+
 
       #nav-bar :hover {
         cursor: pointer;
@@ -202,7 +322,7 @@
         padding-left: 40%;
       }
 
-      improvements to make responsiveness
+      /* improvements to make responsiveness */
 input, button {
   padding: 10px;
   font-size: 16px;
@@ -232,7 +352,7 @@ img {
 
 /* NAVBAR */
 #nav-bar ul {
-  display: flex;
+ 
   justify-content: space-around;
   list-style: none;
   background: rgb(65, 28, 2);
@@ -440,14 +560,22 @@ button {
   </head>
   <canvas id="cursorCanvas"></canvas>
   <body>
-    <div id="nav-bar">
-      <ul>
+        <div id="nav-bar">
+
+    <div class="logo">KAJOINT ☕</div>
+
+    <div id="menu-toggle">
+        ☰
+    </div>
+
+    <ul id="nav-links">
         <li><a href="coffee.html">HOME</a></li>
         <li><a href="about us.html">ABOUT US</a></li>
         <li><a href="product.html">PRODUCTS</a></li>
         <li><a href="branches.html">BRANCHES</a></li>
-      </ul>
-    </div>
+    </ul>
+
+</div>
 
       <h1>
         <b>Form Ya Coffee Kajoint</b> <br />
@@ -528,7 +656,6 @@ button {
 
   <p id="paymentMessage"></p>
 </div>
-```
 
     <div id="receipt">
       <h2><b>Coffee Kajoint rcpt</b></h2>

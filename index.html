@@ -26,30 +26,7 @@
         width: 100%; /* Ensures it spans the full width of the screen */
         z-index: 1000; /* Ensures it stays above other content */
       }
-     .nav ul,li {
-      
-      color: black;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      text-decoration: none;
-      list-style-type: none;
-      padding: 10px 16px;
-      
-     }
-             .nav ul{
-    display: flex;
-    gap: 9px;
-    list-style: none;
-}
 
-.nav li{
-    background-color:rgb(45, 48, 45);
-    padding: 10px 20px;
-    border-radius: 30px;
-
-    border: 2px solid black;
-}
 
     
      .ME {
@@ -189,7 +166,7 @@
 .MORE2,
 .MORE3,
 .MORE4{
-    border: 2px solid black;
+    border: 2px solid gold;
     border-radius: 15px;
     padding: 10px;
     width: 200px;
@@ -237,14 +214,17 @@
       transition: 0.3s;
 }
 
-        .copy {
-          color: white;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          padding: 14px 16px;
-          font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-          font-weight: bold;
+        #copy {     
+    text-align: center;
+    margin-top: 20px;
+    padding: 15px;
+    color: white;
+    background-color: rgba(0,0,0,0.5);
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: bold;
         }
 
         /* addition changes */
@@ -283,7 +263,7 @@
 
 /* Location styling */
 .location {
-  font-size: 35px;
+  font-size: 20px;
   color: rgb(238, 238, 5);
 }
 
@@ -316,7 +296,7 @@ h2 {
 #Dev{
   text-align: center;
   display: flex;
-  margin-left: 35%;
+ 
   align-items: center;
   justify-content: center;
   background-image: url("./Real\ Paint.jpg");
@@ -326,16 +306,49 @@ h2 {
   display: inline-flex;
   border-radius: 10px;
   text-align: center;
-  cursor: pointer;
-   
+  cursor: pointer; 
   transition: 0.4s ease;
-
+  margin-top: 30px;
+  padding: 2.9px;
+  
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-top: 30px;
 }
+
+#Dev h1{
+  
+    font-size: clamp(2rem, 6vw, 5rem);
+    color: white;
+   
+    width: fit-content;
+    padding: 10px 20px;
+    margin: 0 auto;
+}
+
+
+
+
+#Web h2{
+    font-size: clamp(1.2rem, 3vw, 2.5rem);
+    color: orange;
+   
+    width: fit-content;
+    padding: 10px 20px;
+    margin: 0 auto;
+}
+
+
 #Dev h1 {
   color: black;
   cursor: pointer;
   display: inline-block;
   margin: 0;
+  font-size: clamp(2rem, 2vw, 4rem);
+  letter-spacing: 2px;
   
 }
 #Dev:hover {
@@ -347,23 +360,44 @@ h2 {
 #Web {
   text-align: center;
   display: flex;
-  margin-left: 32%;
+  display: inline-flex;
+  
   align-items: center;
   justify-content: center;
   background-image: url("./Deep\ paint.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  display: inline-flex;
+  
   border-radius: 10px;
   margin-top: 3px;
   margin-bottom: 5px;
   cursor: pointer;
   transition: 0.4s ease;
+   padding: 3px;
 
+      width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-top: 15px;
 }
 #Web h2 {
-  color: yellow;
+ 
+  
+    letter-spacing: 1px;
+
+    font-size: clamp(1.2rem, 4vw, 2.5rem);
+    color: orange;
+    
+    width: fit-content;
+    padding: 10px 20px;
+    margin: 0 auto;
+    justify-self: center;
+    display: inline-block;
+
+
 }
 #Web:hover {
   transform: scale(1.05);
@@ -372,30 +406,186 @@ h2 {
   
 }
 
-/* RESPONSIVE DESIGN */
+
+
+        /* <!-- HAMBURGER MENU -->   STYLING.      */
+/* NAVBAR */
+
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgb(5, 5, 39);
+    color: white;
+    position: relative;
+    top: 0;
+    z-index: 1000;
+    width: 100%;
+    position: fixed;
+    padding: 5px 17px;   /* reduced height */
+}
+
+
+
+.logo{
+    font-size: 15px;
+    font-weight: bold;
+    font-family: 'Times New Roman', Times, serif;
+    color: gold;
+}
+
+.nav-links{
+    display: flex;
+    gap: 13px;
+    list-style: none;
+}
+.nav-links li{
+    margin: 0 10px;
+}
+
+.nav-links li a{
+    color: gold;
+    text-decoration: none;
+    font-size: 12px;
+     margin-right: 8%;
+}
+
+.nav-links li a:hover{
+    color: rgb(104, 101, 101);
+}
+
+/* HAMBURGER */
+
+.menu-toggle{
+    display: none;
+    font-size: 30px;
+    cursor: pointer;
+    margin-right: 10%;
+}
+
+/* MOBILE VIEW */
+
 @media(max-width:768px){
 
-    .nav ul{
+    .menu-toggle{
+        display: block;
+    }
+
+    .nav-links{
+        display: none;
         flex-direction: column;
-   }
+        background-color: black;
+        position: absolute;
+        top: 70px;
+        right: 0;
+       
+        text-align: center; 
+        margin: 0;
+        padding: 0;
+        margin-right: 8%;
 
-    #Dev{
-        font-size: 20px;
     }
 
-    #Web{
-        font-size: 15px;
+    .nav-links.active{
+        display: flex;
     }
 
-    .ME img{
-        width: 170px;
-        height: 170px;
+}
+  /* TO MORE RESPONSIVE OF WEB & DEV */
+   /* NOTE:clamp() automatically scales text for phone, tablet, and desktop. */
+  @media(max-width:200px){
+
+    #Dev h1{
+        
+        line-height: 1.1;
+        display: inline-block;
+         width: fit-content;
     }
 
-    .container-1{
-        width: 95%;
+    #Web h2{
+        
+        line-height: 1.1;
+        display: inline-block;
+         width: fit-content;
+    }
+
+}
+           
+  #Dev,
+#Web{
+    text-align: center;
+}
+  /* RAINY  RAINY ANIMATION */
+        
+    body{
+    margin: 0;
+    overflow-x: hidden;
+    position: relative;
+}
+
+/* RAIN CONTAINER */
+.rain{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 350px;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: 1;
+}
+
+/* RAIN DROPS */
+.rain span{
+    position: absolute;
+    width: 2px;
+    height: 80px;
+    background: linear-gradient(transparent, white);
+    opacity: 0.7;
+    animation: rain 1s linear infinite;
+}
+
+/* DIFFERENT POSITIONS */
+.rain span:nth-child(1){ left: 5%; animation-delay: 0s; }
+.rain span:nth-child(2){ left: 10%; animation-delay: 0.2s; }
+.rain span:nth-child(3){ left: 15%; animation-delay: 0.4s; }
+.rain span:nth-child(4){ left: 20%; animation-delay: 0.1s; }
+.rain span:nth-child(5){ left: 25%; animation-delay: 0.6s; }
+.rain span:nth-child(6){ left: 30%; animation-delay: 0.3s; }
+.rain span:nth-child(7){ left: 35%; animation-delay: 0.5s; }
+.rain span:nth-child(8){ left: 40%; animation-delay: 0.2s; }
+.rain span:nth-child(9){ left: 45%; animation-delay: 0.7s; }
+.rain span:nth-child(10){ left: 50%; animation-delay: 0.1s; }
+.rain span:nth-child(11){ left: 55%; animation-delay: 0.5s; }
+.rain span:nth-child(12){ left: 60%; animation-delay: 0.3s; }
+.rain span:nth-child(13){ left: 65%; animation-delay: 0.6s; }
+.rain span:nth-child(14){ left: 70%; animation-delay: 0.2s; }
+.rain span:nth-child(15){ left: 75%; animation-delay: 0.4s; }
+.rain span:nth-child(16){ left: 80%; animation-delay: 0.7s; }
+.rain span:nth-child(17){ left: 85%; animation-delay: 0.1s; }
+.rain span:nth-child(18){ left: 90%; animation-delay: 0.5s; }
+.rain span:nth-child(19){ left: 95%; animation-delay: 0.3s; }
+.rain span:nth-child(20){ left: 98%; animation-delay: 0.6s; }
+
+/* ANIMATION */
+@keyframes rain{
+    0%{
+        transform: translateY(-120px);
+    }
+
+    100%{
+        transform: translateY(500px);
     }
 }
+    /* TO ensure MY top content stays above the rain */
+  .container-2,
+#Dev,
+#Web,
+.navbar{
+    position: relative;
+    z-index: 2;
+}
+
 
   </style>
 
@@ -404,16 +594,44 @@ h2 {
 
 </head>
 <body>
+          <div class="rain">
+  <span></span>
+  <span></span>
+  <span></span>
+  <span></span>
+  <span></span>
+  <span></span>
+  <span></span>
+  <span></span>
+  <span></span>
+  <span></span>
+  <span></span>
+  <span></span>
+  <span></span>
+  <span></span>
+  <span></span>
+  <span></span>
+  <span></span>
+  <span></span>
+  <span></span>
+  <span></span>
+</div>
+           <!-- HAMBURGER MENU -->
+  <nav class="navbar">
 
-        <nav-bar class="nav">
-          <ul>
-            <li>PROJECTS</li>
-                   
-              <li><a href="socials.html">SOCIALS</a></li>
-            
-            <li>ABOUT ME</li>
-          </ul>
-        </nav-bar>
+    <div class="logo">MASINDE DEV</div>
+
+    <div class="menu-toggle" id="menu-toggle">
+      ☰
+    </div>
+
+    <ul class="nav-links" id="nav-links">
+      <li><a href="#">Projects</a></li>
+      <li><a href="socials.html">Socials</a></li>
+      <li><a href="#">About</a></li>
+    </ul>
+
+  </nav>
            
          
          <div class="container-2">
@@ -422,11 +640,10 @@ h2 {
              <img src="./IMG_8905 Edited2.jpg" alt="" height="200" width="200">
            </div>
           <div class="location">
-           <p> 
-             <p class="location">
+          
+           <div class="location">
   <i class="fa-solid fa-location-dot"></i> Nairobi, Kenya
-</p>
-           </p>
+</div>
 
           </div>
          </div>
@@ -472,8 +689,9 @@ h2 {
 
           </div>
                       <hr>
-                      <div class="copy">
+                      <div id="copy">
                         <b> &copy; 2026 Masinde the Developer. All rights reserved.</b>
                       </div>
 </body>
+      <script src="./injex.js"> </script>
 </html>
