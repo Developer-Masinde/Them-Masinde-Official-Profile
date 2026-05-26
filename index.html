@@ -136,6 +136,11 @@
       
       
      }
+       .MORE-B h3{
+              display: inline-block;
+      color: white;
+
+       }
   
       .MORE2 h3 {
      
@@ -162,6 +167,7 @@
     justify-content: center;
 }
   /* More styling effect on lAST CONTAINER */
+.MORE-B, 
 .MORE,
 .MORE2,
 .MORE3,
@@ -176,14 +182,15 @@
     cursor: pointer;
     backdrop-filter: blur(5px);
 }
-   .MORE:hover, 
+.MORE-B:hover,
+.MORE:hover, 
 .MORE2:hover, 
 .MORE3:hover, 
 .MORE4:hover {
   transform: translateY(-10px) scale(1.03);
   box-shadow: 0 15px 30px rgba(0,0,0,0.2);
 }
-
+.MORE-B ul,
 .MORE ul,
 .MORE2 ul,
 .MORE3 ul,
@@ -191,7 +198,7 @@
     list-style: none;
     padding: 0;
 }
-
+.MORE-B button,
 .MORE button,
 .MORE2 button,
 .MORE3 button,
@@ -228,6 +235,13 @@
         }
 
         /* addition changes */
+        /* MAKING PARTS OF THE CONTAINER-1 HAVE DISTINCT BACKGROUND IMAGE COLOURS */
+        .container-1 .MORE-B {
+          background-image: url("./BOOK\ COVER.jpg");
+          background-position: center;
+          background-size: cover;
+          background-repeat: no-repeat;
+        }
         .container-1 .MORE {
           background-image: url("./coffeeNiceBackground.jpg");
           background-position: center;
@@ -656,6 +670,17 @@ h2 {
           
 
           <div class="container-1">
+                <div class="MORE-B">
+
+                <h3><b>MASINDE📑BOOK📔</b></h3>
+                               
+        <ul>
+       
+        <li><a href="./Homepage.html"><button><b>VIEW</b></button></a></li>
+     
+      </ul>
+          
+          </div>
                 <div class="MORE">
 
                 <h3><b>COFFEE RESTAURANT</b></h3>

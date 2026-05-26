@@ -1,0 +1,1028 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8" />
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+<title>EPIGNOSIS</title>
+
+<style>
+
+/* GLOBAL */
+
+*{
+    box-sizing: border-box;
+}
+
+
+
+/* BODY */
+
+body{
+
+    background-image: url("./Dark-Vejens background.png");
+
+    background-position: center;
+
+    background-repeat: no-repeat;
+
+    background-size: cover;
+
+    background-attachment: fixed;
+
+    margin: 0;
+
+    padding: 0;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    overflow-x: hidden;
+
+    scroll-behavior: smooth;
+}
+
+
+
+/* PARTICLES */
+
+#tsparticles{
+
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    z-index: -1;
+}
+
+
+
+/* NAVBAR */
+
+#nav{
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+
+    padding: 15px 0;
+
+    background: rgba(0,0,0,0.85);
+
+    backdrop-filter: blur(10px);
+
+    z-index: 1000;
+}
+
+
+
+#nav ul{
+
+    display: flex;
+
+    gap: 30px;
+
+    list-style: none;
+
+    margin: 0;
+
+    padding: 0;
+}
+
+
+
+#nav li{
+
+    color: gold;
+
+    cursor: pointer;
+
+    transition: 0.4s;
+}
+
+
+
+#nav li:hover{
+
+    color: white;
+
+    transform: scale(1.1);
+}
+
+
+
+/* HERO SECTION */
+
+#Hero{
+
+    height: 100vh;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: center;
+
+    text-align: center;
+
+    color: white;
+
+    padding: 20px;
+}
+
+
+
+/* HERO TITLE */
+
+#hero-title{
+
+    font-size: 90px;
+
+    color: gold;
+
+    text-shadow: 0px 0px 20px gold;
+
+    animation: glow 2s infinite alternate;
+}
+
+
+
+@keyframes glow{
+
+    from{
+        text-shadow: 0px 0px 10px gold;
+    }
+
+    to{
+        text-shadow: 0px 0px 30px gold;
+    }
+
+}
+
+
+
+/* TYPING TEXT */
+
+#typing-text{
+
+    font-size: 28px;
+
+    color: wheat;
+
+    margin-bottom: 30px;
+}
+
+
+
+/* BUTTON */
+
+#exploreBtn{
+
+    padding: 15px 40px;
+
+    border: none;
+
+    border-radius: 40px;
+
+    background: gold;
+
+    color: black;
+
+    font-size: 18px;
+
+    cursor: pointer;
+
+    transition: 0.4s;
+}
+
+
+
+#exploreBtn:hover{
+
+    transform: scale(1.1);
+
+    box-shadow: 0px 0px 20px gold;
+}
+
+
+
+/* CONTAINER */
+
+#Container{
+
+    display: grid;
+
+    grid-template-columns: repeat(auto-fit,minmax(280px,1fr));
+
+    gap: 25px;
+
+    padding: 40px;
+
+    opacity: 0;
+
+    transform: translateY(100px);
+
+    transition: 1s;
+
+    pointer-events: none;
+}
+
+
+
+/* SHOW CONTAINER */
+
+#Container.show{
+
+    opacity: 1;
+
+    transform: translateY(0);
+
+    pointer-events: auto;
+}
+
+
+
+/* STUDY CARDS */
+
+.study-card{
+
+    background: rgba(20,20,20,0.92);
+
+    border: 1px solid gold;
+
+    border-radius: 20px;
+
+    padding: 25px;
+
+    color: white;
+
+    min-height: 250px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: space-between;
+
+    transition: 0.4s;
+
+    box-shadow: 0px 0px 15px rgba(255,215,0,0.2);
+}
+
+
+
+.study-card:hover{
+
+    transform: translateY(-10px);
+
+    box-shadow: 0px 0px 25px gold;
+}
+
+
+
+/* CARD TITLE */
+
+.study-card h1{
+
+    background: white;
+
+    color: blue;
+
+    padding: 10px;
+
+    border-radius: 10px;
+
+    text-align: center;
+
+    border: 2px solid gold;
+
+    font-size: 22px;
+}
+
+
+
+/* CARD TEXT */
+
+.study-card p{
+
+    color: wheat;
+
+    line-height: 1.7;
+
+    background: rgba(255,255,255,0.06);
+
+    padding: 15px;
+
+    border-radius: 10px;
+}
+
+
+
+/* CARD BUTTON */
+
+.study-card button{
+
+    padding: 12px;
+
+    border: none;
+
+    border-radius: 12px;
+
+    background: gold;
+
+    color: black;
+
+    cursor: pointer;
+
+    font-weight: bold;
+
+    margin-top: 20px;
+
+    transition: 0.4s;
+}
+
+
+
+.study-card button:hover{
+
+    transform: scale(1.05);
+
+    box-shadow: 0px 0px 15px gold;
+}
+
+
+
+/* POPUP */
+
+#popup{
+
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    background: rgba(0,0,0,0.9);
+
+    display: none;
+
+    justify-content: center;
+
+    align-items: center;
+
+    z-index: 9999;
+
+    padding: 20px;
+}
+
+
+
+/* POPUP CONTENT */
+
+#popup-content{
+
+    background: rgba(15,15,15,0.98);
+
+    width: 85%;
+
+    max-width: 1000px;
+
+    height: 85vh;
+
+    border-radius: 25px;
+
+    padding: 40px;
+
+    overflow-y: auto;
+
+    color: white;
+
+    position: relative;
+
+    box-shadow: 0px 0px 30px gold;
+
+    line-height: 2;
+}
+
+
+
+/* CLOSE BUTTON */
+
+#closeBtn{
+
+    position: absolute;
+
+    top: 10px;
+
+    right: 25px;
+
+    font-size: 40px;
+
+    color: gold;
+
+    cursor: pointer;
+}
+
+
+
+/* POPUP TITLE */
+
+#popupTitle{
+
+    color: gold;
+
+    margin-bottom: 20px;
+}
+
+
+
+/* SCROLLBAR */
+
+#popup-content::-webkit-scrollbar{
+
+    width: 10px;
+}
+
+
+
+#popup-content::-webkit-scrollbar-thumb{
+
+    background: gold;
+
+    border-radius: 20px;
+}
+
+
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+    #hero-title{
+        font-size: 55px;
+    }
+
+    #typing-text{
+        font-size: 20px;
+    }
+
+    #popup-content{
+        width: 95%;
+        padding: 25px;
+    }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+
+
+<!-- PARTICLES -->
+
+<div id="tsparticles"></div>
+
+
+
+<!-- NAVBAR -->
+
+<div id="nav">
+
+    <nav>
+
+        <ul>
+
+            <li>Author</li>
+            <li>Contents</li>
+            <li>Contact</li>
+
+        </ul>
+
+    </nav>
+
+</div>
+
+
+
+<!-- HERO SECTION -->
+
+<section id="Hero">
+
+    <h1 id="hero-title">EPIGNOSIS</h1>
+
+    <p id="typing-text"></p>
+
+    <button id="exploreBtn">
+
+        CLICK HERE TO READ THE BOOK
+
+    </button>
+
+</section>
+
+
+
+<!-- CONTAINER -->
+
+<div id="Container">
+
+
+
+<!-- CARD -->
+
+<div class="study-card">
+
+    <h1>Daniel Prayer</h1>
+
+    <p>
+        Understand Daniel's delayed answer in prayer.
+    </p>
+
+    <button onclick='openPopup(
+
+    "Daniel Prayer",
+
+    `The biblical account in Daniel 10 serves as a foundational text for understanding spiritual warfare.
+
+    Daniel prayed consistently for 21 days while angelic warfare occurred in heavenly places.
+
+    God answered immediately but manifestation delayed because of resistance in the spirit realm.
+
+    This teaches persistence, discernment, endurance, and spiritual consistency.`
+
+    )'>
+
+    Read More
+
+    </button>
+
+</div>
+
+
+
+<!-- CARD -->
+
+<div class="study-card">
+
+    <h1>Ezekiel Dry Bones</h1>
+
+    <p>
+        Prophetic revival and restoration.
+    </p>
+
+    <button onclick='openPopup(
+
+    "Ezekiel Dry Bones",
+
+    `The valley of dry bones represents hopeless situations revived by the breath of God.
+
+    Ezekiel prophesied and dead bones became a mighty army.
+
+    God still restores dead dreams and broken destinies.`
+
+    )'>
+
+    Read More
+
+    </button>
+
+</div>
+<!-- CARD -->
+
+<div class="study-card">
+
+    <h1>Ezekiel Dry Bones</h1>
+
+    <p>
+        Prophetic revival and restoration.
+    </p>
+
+    <button onclick='openPopup(
+
+    "Ezekiel Dry Bones",
+
+    `The valley of dry bones represents hopeless situations revived by the breath of God.
+
+    Ezekiel prophesied and dead bones became a mighty army.
+
+    God still restores dead dreams and broken destinies.`
+
+    )'>
+
+    Read More
+
+    </button>
+
+</div>
+<!-- CARD -->
+
+<div class="study-card">
+
+    <h1>Ezekiel Dry Bones</h1>
+
+    <p>
+        Prophetic revival and restoration.
+    </p>
+
+    <button onclick='openPopup(
+
+    "Ezekiel Dry Bones",
+
+    `The valley of dry bones represents hopeless situations revived by the breath of God.
+
+    Ezekiel prophesied and dead bones became a mighty army.
+
+    God still restores dead dreams and broken destinies.`
+
+    )'>
+
+    Read More
+
+    </button>
+
+</div>
+<!-- CARD -->
+
+<div class="study-card">
+
+    <h1>Ezekiel Dry Bones</h1>
+
+    <p>
+        Prophetic revival and restoration.
+    </p>
+
+    <button onclick='openPopup(
+
+    "Ezekiel Dry Bones",
+
+    `The valley of dry bones represents hopeless situations revived by the breath of God.
+
+    Ezekiel prophesied and dead bones became a mighty army.
+
+    God still restores dead dreams and broken destinies.`
+
+    )'>
+
+    Read More
+
+    </button>
+
+</div>
+<!-- CARD -->
+
+<div class="study-card">
+
+    <h1>Ezekiel Dry Bones</h1>
+
+    <p>
+        Prophetic revival and restoration.
+    </p>
+
+    <button onclick='openPopup(
+
+    "Ezekiel Dry Bones",
+
+    `The valley of dry bones represents hopeless situations revived by the breath of God.
+
+    Ezekiel prophesied and dead bones became a mighty army.
+
+    God still restores dead dreams and broken destinies.`
+
+    )'>
+
+    Read More
+
+    </button>
+
+</div>
+<!-- CARD -->
+
+<div class="study-card">
+
+    <h1>Ezekiel Dry Bones</h1>
+
+    <p>
+        Prophetic revival and restoration.
+    </p>
+
+    <button onclick='openPopup(
+
+    "Ezekiel Dry Bones",
+
+    `The valley of dry bones represents hopeless situations revived by the breath of God.
+
+    Ezekiel prophesied and dead bones became a mighty army.
+
+    God still restores dead dreams and broken destinies.`
+
+    )'>
+
+    Read More
+
+    </button>
+
+</div>
+<!-- CARD -->
+
+<div class="study-card">
+
+    <h1>Ezekiel Dry Bones</h1>
+
+    <p>
+        Prophetic revival and restoration.
+    </p>
+
+    <button onclick='openPopup(
+
+    "Ezekiel Dry Bones",
+
+    `The valley of dry bones represents hopeless situations revived by the breath of God.
+
+    Ezekiel prophesied and dead bones became a mighty army.
+
+    God still restores dead dreams and broken destinies.`
+
+    )'>
+
+    Read More
+
+    </button>
+
+</div>
+<!-- CARD -->
+
+<div class="study-card">
+
+    <h1>Ezekiel Dry Bones</h1>
+
+    <p>
+        Prophetic revival and restoration.
+    </p>
+
+    <button onclick='openPopup(
+
+    "Ezekiel Dry Bones",
+
+    `The valley of dry bones represents hopeless situations revived by the breath of God.
+
+    Ezekiel prophesied and dead bones became a mighty army.
+
+    God still restores dead dreams and broken destinies.`
+
+    )'>
+
+    Read More
+
+    </button>
+
+</div>
+<!-- CARD -->
+
+<div class="study-card">
+
+    <h1>Ezekiel Dry Bones</h1>
+
+    <p>
+        Prophetic revival and restoration.
+    </p>
+
+    <button onclick='openPopup(
+
+    "Ezekiel Dry Bones",
+
+    `The valley of dry bones represents hopeless situations revived by the breath of God.
+
+    Ezekiel prophesied and dead bones became a mighty army.
+
+    God still restores dead dreams and broken destinies.`
+
+    )'>
+
+    Read More
+
+    </button>
+
+</div>
+
+
+
+<!-- CARD -->
+
+<div class="study-card">
+
+    <h1>Angelic Ministry</h1>
+
+    <p>
+        Understanding divine angelic assignments.
+    </p>
+
+     <button onclick='openPopup(
+
+    "Angelic Ministry",
+
+    `Angels are ministering spirits assigned to assist believers according to God's purposes.
+
+    Throughout scripture angels guide, protect, strengthen, and execute divine assignments.`
+         )'>
+    
+
+    Read More
+
+    </button>
+
+</div>
+
+
+
+</div>
+
+
+
+<!-- POPUP -->
+
+<!-- POPUP -->
+
+<div id="popup">
+
+    <div id="popup-content">
+
+        <span id="closeBtn" onclick="closePopup()">
+
+            &times;
+
+        </span>
+
+        <h1 id="popupTitle"></h1>
+
+        <p id="popupText"></p>
+
+    </div>
+
+</div>
+
+
+
+<!-- PARTICLES SCRIPT -->
+<script src="https://cdn.jsdelivr.net/npm/tsparticles@2/tsparticles.bundle.min.js"></script>
+
+
+<script>
+
+window.addEventListener("load", () => {
+
+tsParticles.load("tsparticles", {
+
+    background: {
+        color: "transparent"
+    },
+
+    particles: {
+
+        number: {
+            value: 80
+        },
+
+        color: {
+            value: "#FFD700"
+        },
+
+        shape: {
+            type: "circle"
+        },
+
+        opacity: {
+            value: 0.5
+        },
+
+        size: {
+            value: 3
+        },
+
+        move: {
+            enable: true,
+            speed: 1
+        },
+
+        links: {
+            enable: true,
+            distance: 150,
+            color: "#FFD700",
+            opacity: 0.2,
+            width: 1
+        }
+
+    }
+
+});
+
+});
+
+</script>
+
+
+
+<!-- POPUP SCRIPT -->
+
+<script>
+
+function openPopup(title, text){
+
+    document.getElementById("popup").style.display = "flex";
+
+    document.getElementById("popupTitle").innerHTML = title;
+
+    document.getElementById("popupText").innerHTML = text;
+}
+
+function closePopup(){
+
+    document.getElementById("popup").style.display = "none";
+}
+
+/* CLOSE WHEN CLICKING OUTSIDE */
+
+window.onclick = function(e){
+
+    const popup = document.getElementById("popup");
+
+    if(e.target === popup){
+
+        popup.style.display = "none";
+    }
+}
+
+</script>
+
+
+
+<!-- TYPING EFFECT -->
+
+<script>
+
+const text =
+"Revealing Kingdom Mysteries Through The WORD of GOD";
+
+let index = 0;
+
+function typeText(){
+
+    if(index < text.length){
+
+        document.getElementById("typing-text").textContent +=
+        text.charAt(index);
+
+        index++;
+
+        setTimeout(typeText,70);
+    }
+
+}
+
+typeText();
+
+
+
+/* SHOW CONTAINER */
+
+const exploreBtn =
+document.getElementById("exploreBtn");
+
+const Container = document.getElementById("Container");
+
+exploreBtn.addEventListener("click", ()=>{
+
+    Container.classList.add("show");
+
+    Container.scrollIntoView({
+        behavior: "smooth"
+    });
+
+});
+
+</script>
+
+</body>
+
+</html>
