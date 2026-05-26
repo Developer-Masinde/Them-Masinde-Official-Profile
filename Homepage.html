@@ -10,21 +10,19 @@
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
-        padding-top: 80px ;
+        padding-top: 80px;
         margin: 0;
         background-attachment: fixed;
-
-  
       }
-    
+
       #nav ul {
         display: flex;
         gap: 20px;
         list-style-type: none;
       }
 
-       #Container {
-        grid-template-columns: repeat(2,1fr);
+      #Container {
+        grid-template-columns: repeat(2, 1fr);
         display: grid;
         align-items: center;
         justify-content: center;
@@ -35,366 +33,337 @@
         margin: 10px 40px 10px 40px;
         gap: 20px;
         cursor: pointer;
-
-       }
-      #Container
-       #Video-page
-        video{
-    width: 50%;
-    height: auto;
-    display: block;
-    object-fit: cover;
-    border-radius: 10px;
-
-}
-
-
-           #Container
-           #Video-page {
-            
-                border: solid 2px gold;
-                border-radius: 10px;
-                overflow: hidden;
-            background-image: url("blackFlower.jpg") ;
-            background-position: center;
-            background-repeat: no-repeat;
-            background-size: cover;
-           display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 3px;
-           }
-           #Container
-           #Contents {
-            background-image: url("blackFlower.jpg") ;
-            background-position: center;
-            background-repeat: no-repeat;
-            background-size: cover;
-            border: solid 2px gold;
-            border-radius: 10px;
-            padding: 45px;
-           }
-            #Container
-           #Contents p{
-            text-align: center;
-            font-size: 20px;
-            color: white;
-           }
-              #Container
-         #Bible-quote{
-            border: solid 2px gold;
-            border-radius: 10px;
-            background-image: url("./blackFlower.jpg");
-            background-position: center;
-            background-repeat: no-repeat;
-            background-size: cover;
-            padding: 25px;
-         }
-          .verse{
-  display: none;
-  padding: 15px;
-  margin-top: 10px;
-  border-radius: 10px;
-  color: white;
-  font-size: 18px;
-  animation: fade 1s;
-}
-
-.verse.active{
-  display: block;
-}
-
-#A{
-  background-color: rgb(66,66,15);
-}
-
-#B{
-  background-color: rgb(8,34,8);
-}
-
-#C{
-  background-color: rgb(58,4,4);
-}
-#D {
-  background-color: gold;
-  color: black;
-}
-
-@keyframes fade{
-  from{
-    opacity: 0;
-    transform: translateY(10px);
-  }
-
-  to{
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-   
-         #Container
-         #Motivation {
-  background-image: url("blackFlower.jpg") ;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  color: white;
-  border: 2px solid gold;
-  border-radius: 10px;
-  padding: 8px;
-
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  gap: 5px;
-  font-size: 20px;
-  font-weight: bold;
-}
-#Container
-#Motivation p {
-  margin: 0;
-  padding: 2px;
-  background-color: rgba(255, 255, 255, 0.08);
-  border-left: 5px solid gold;
-  border-radius: 8px;
-}
-  #Container
-  #Bible-quote h1
-  {
-     text-align: center;
-    font-size: 20px;
-    color: white;
-  }
-    #Container
-    #Motivation h1 {
-     text-align: center;
-    font-size: 20px;
-    color:rgb(247, 247, 5);
-  }
-    #Head-1 h1,
-    #Head-1 h2{
-      text-align: center;
-      color:rgb(247, 246, 243);
-      
-    }
-    #Head-1{
-    margin-top: 50px;
-
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-    #Head-1 h1{
-    background-color: rgba(0,0,0,0.7);
-    color: gold;
-    display: inline-flex;
-    padding: 10px 20px;
-    border-radius: 10px;
-    text-align: center;
-    margin-top: 10px;
-
-
-
-}
-    #Head-1 h2{
-    background-color: rgba(0,0,0,0.7);
-    color: rgb(236, 234, 220);
-    display: inline-block;
-    padding: 10px 20px;
-    border-radius: 10px;
-    text-align: center;
-}
-     #typing-text{
-    min-height: 40px;
-}
-
-    #Head-1 h3{
-    background-color: rgba(0,0,0,0.7);
-    color: goldenrod;
-    display: inline-flex;
-    padding: 10px 20px;
-    border-radius: 10px;
-    text-align: center;
-  
-}
-#Contents select{
-    background-color: rgb(36, 35, 35);
-    color: gold;
-
-    padding: 10px;
-    border-radius: 8px;
-    border: 2px solid gold;
-
-    width: 50%;
-}
-
-#Contents option{
-    background-color: rgb(143, 137, 137);
-    color: white;
-}
-
-
-     /* SMOOTH TRANSITION ANIMATION IN THE CONTAINER */ 
-     #Contents,
-#Motivation,
-#Bible-quote,
-#Video-page{
-
-    transition: all 0.4s ease;
-
-    cursor: pointer;
-     /* Blur Glass Effect */
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
-}
-#Contents:hover,
-#Motivation:hover,
-#Bible-quote:hover,
-#Video-page:hover{
-
-    transform: translateY(-10px) scale(1.02);
-
-    box-shadow: 0px 0px 20px gold;
-
-    border-color: white;
-}
-#Contents:active,
-#Motivation:active,
-#Bible-quote:active,
-#Video-page:active{
-
-    transform: scale(0.97);
-
-    transition: 0.1s;
-}
-
-
-  /* OPENING REMARKS TO MY WEBSITE */
-/* LOADER */
-
-#loader{
-    position: fixed;
-
-    top: 0;
-    left: 0;
-
-    width: 100%;
-    height: 100vh;
-
-    background: black;
-
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-
-    z-index: 99999;
-
-    animation: fadeOut 2s ease forwards;
-
-    animation-delay: 5s;
-}
-
-/* GLOWING CIRCLE */
-
-.glow-circle{
-    width: 120px;
-    height: 120px;
-
-    border-radius: 50%;
-
-    background: gold;
-
-    box-shadow:
-    0 0 20px gold,
-    0 0 40px gold,
-    0 0 60px gold;
-
-    animation: pulse 1.5s infinite;
-}
-
-/* TEXT */
-
-#loader-text{
-    color: gold;
-
-    margin-top: 30px;
-
-    font-size: 40px;
-
-    letter-spacing: 8px;
-
-    text-shadow:
-    0 0 10px gold,
-    0 0 20px gold,
-    0 0 40px gold;
-
-    animation: glowText 1.5s infinite alternate;
-}
-
-/* PULSE EFFECT */
-
-@keyframes pulse{
-
-    0%{
-        transform: scale(1);
-    }
-
-    50%{
-        transform: scale(1.1);
-    }
-
-    100%{
-        transform: scale(1);
-    }
-}
-
-/* TEXT GLOW */
-
-@keyframes glowText{
-
-    from{
-        opacity: 0.7;
-    }
-
-    to{
-        opacity: 1;
-    }
-}
-
-/* FADE OUT */
-
-@keyframes fadeOut{
-
-    to{
-        opacity: 0;
-        visibility: hidden;
-    }
-}
- #nav ul li {
- text-transform: uppercase;
- cursor: pointer;
- }
-
-
- #nav li{
-    transition: 0.3s;
-    cursor: pointer;
-}
-
-#nav li:hover{
-    color: white;
-    transform: translateY(-2px);
-    text-shadow: 0 0 10px gold;
-}
-
-    /* STYLING THE HAMBURGER MENU */
-    /* NAVIGATION */
-
-#nav{
-       display: flex;
-       justify-content: space-between;
-       align-items: center;
+      }
+      #Container #Video-page video {
+        width: 50%;
+        height: auto;
+        display: block;
+        object-fit: cover;
+        border-radius: 10px;
+      }
+
+      #Container #Video-page {
+        border: solid 2px gold;
+        border-radius: 30px;
+        overflow: hidden;
+        background-image: url("blackFlower.jpg");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 3px;
+      }
+      #Container #Contents {
+        background-image: url("blackFlower.jpg");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        border: solid 2px gold;
+        border-radius: 30px;
+        padding: 45px;
+      }
+      #Container #Contents p {
+        text-align: center;
+        font-size: 20px;
+        color: white;
+      }
+      #Container #Bible-quote {
+        border: solid 2px gold;
+        border-radius: 30px;
+        background-image: url("./blackFlower.jpg");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        padding: 25px;
+      }
+      .verse {
+        display: none;
+        padding: 15px;
+        margin-top: 10px;
+        border-radius: 10px;
+        color: white;
+        font-size: 18px;
+        animation: fade 1s;
+      }
+
+      .verse.active {
+        display: block;
+      }
+
+      #A {
+        background-color: rgb(66, 66, 15);
+      }
+
+      #B {
+        background-color: rgb(8, 34, 8);
+      }
+
+      #C {
+        background-color: rgb(58, 4, 4);
+      }
+      #D {
+        background-color: gold;
+        color: black;
+      }
+
+      @keyframes fade {
+        from {
+          opacity: 0;
+          transform: translateY(10px);
+        }
+
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      #Container #Motivation {
+        background-image: url("blackFlower.jpg");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        color: white;
+        border: 2px solid gold;
+        border-radius: 30px;
+        padding: 40px;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 5px;
+        font-size: 20px;
+        font-weight: bold;
+      }
+      #Container #Motivation p {
+        margin: 0;
+        padding: 2px;
+        background-color: rgba(255, 255, 255, 0.08);
+        border-left: 5px solid gold;
+        border-radius: 8px;
+      }
+      #Container #Bible-quote h1 {
+        text-align: center;
+        font-size: 20px;
+        color: white;
+      }
+      #Container #Motivation h1 {
+        text-align: center;
+        font-size: 20px;
+        color: rgb(247, 247, 5);
+      }
+      #Head-1 h1,
+      #Head-1 h2 {
+        text-align: center;
+        color: rgb(247, 246, 243);
+      }
+      #Head-1 {
+        margin-top: 50px;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      #Head-1 h1 {
+        background-color: rgba(0, 0, 0, 0.7);
+        color: gold;
+        display: inline-flex;
+        padding: 10px 20px;
+        border-radius: 10px;
+        text-align: center;
+        margin-top: 10px;
+      }
+      #Head-1 h2 {
+        background-color: rgba(0, 0, 0, 0.7);
+        color: rgb(236, 234, 220);
+        display: inline-block;
+        padding: 10px 20px;
+        border-radius: 10px;
+        text-align: center;
+      }
+      #typing-text {
+        min-height: 40px;
+      }
+
+      #Head-1 h3 {
+        background-color: rgba(0, 0, 0, 0.7);
+        color: goldenrod;
+        display: inline-flex;
+        padding: 10px 20px;
+        border-radius: 10px;
+        text-align: center;
+      }
+      #Contents select {
+        background-color: rgb(36, 35, 35);
+        color: gold;
+
+        padding: 10px;
+        border-radius: 8px;
+        border: 2px solid gold;
+
+        width: 50%;
+      }
+
+      #Contents option {
+        background-color: rgb(143, 137, 137);
+        color: white;
+      }
+
+      /* SMOOTH TRANSITION ANIMATION IN THE CONTAINER */
+      #Contents,
+      #Motivation,
+      #Bible-quote,
+      #Video-page {
+        transition: all 0.4s ease;
+
+        cursor: pointer;
+        /* Blur Glass Effect */
+        backdrop-filter: blur(8px);
+        -webkit-backdrop-filter: blur(8px);
+      }
+      #Contents:hover,
+      #Motivation:hover,
+      #Bible-quote:hover,
+      #Video-page:hover {
+        transform: translateY(-10px) scale(1.02);
+
+        box-shadow: 0px 0px 20px gold;
+
+        border-color: white;
+      }
+      #Contents:active,
+      #Motivation:active,
+      #Bible-quote:active,
+      #Video-page:active {
+        transform: scale(0.97);
+
+        transition: 0.1s;
+      }
+
+      /* OPENING REMARKS TO MY WEBSITE */
+      /* LOADER */
+
+      #loader {
+        position: fixed;
+
+        top: 0;
+        left: 0;
+
+        width: 100%;
+        height: 100vh;
+
+        background: black;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        z-index: 99999;
+
+        animation: fadeOut 2s ease forwards;
+
+        animation-delay: 5s;
+      }
+
+      /* GLOWING CIRCLE */
+
+      .glow-circle {
+        width: 120px;
+        height: 120px;
+
+        border-radius: 50%;
+
+        background: gold;
+
+        box-shadow:
+          0 0 20px gold,
+          0 0 40px gold,
+          0 0 60px gold;
+
+        animation: pulse 1.5s infinite;
+      }
+
+      /* TEXT */
+
+      #loader-text {
+        color: gold;
+
+        margin-top: 30px;
+
+        font-size: 40px;
+
+        letter-spacing: 8px;
+
+        text-shadow:
+          0 0 10px gold,
+          0 0 20px gold,
+          0 0 40px gold;
+
+        animation: glowText 1.5s infinite alternate;
+      }
+
+      /* PULSE EFFECT */
+
+      @keyframes pulse {
+        0% {
+          transform: scale(1);
+        }
+
+        50% {
+          transform: scale(1.1);
+        }
+
+        100% {
+          transform: scale(1);
+        }
+      }
+
+      /* TEXT GLOW */
+
+      @keyframes glowText {
+        from {
+          opacity: 0.7;
+        }
+
+        to {
+          opacity: 1;
+        }
+      }
+
+      /* FADE OUT */
+
+      @keyframes fadeOut {
+        to {
+          opacity: 0;
+          visibility: hidden;
+        }
+      }
+      #nav ul li {
+        text-transform: uppercase;
+        cursor: pointer;
+      }
+
+      #nav li {
+        transition: 0.3s;
+        cursor: pointer;
+      }
+
+      #nav li:hover {
+        color: white;
+        transform: translateY(-2px);
+        text-shadow: 0 0 10px gold;
+      }
+
+      /* STYLING THE HAMBURGER MENU */
+      /* NAVIGATION */
+
+      #nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
         padding: 15px 25px;
         background-image: url("blackFlower.jpg");
         background-repeat: no-repeat;
@@ -402,425 +371,403 @@
         background-size: cover;
         list-style-type: none;
         color: gold;
-       backdrop-filter: blur(10px);
-       position: fixed;
-       top: 0;
-       left: 0;
-       width: 100%;
-       z-index: 9999; 
-       background-attachment: fixed;
-}
-    nav{
-    flex: 1;
-    display: flex;
-    justify-content: center;
-}
-
-/* LOGO */
-
-#logo{
-    color: gold;
-    font-size: 24px;
-    font-weight: bold;
-
-    text-shadow: 0 0 10px gold;
-}
-
-/* NAV LINKS */
-
-#nav-links{
-    display: flex;
-    gap: 20px;
-    list-style: none; 
-}
-
-#nav-links li{
-    color: gold;
-    display: flex;
-
-    cursor: pointer;
-
-    transition: 0.3s;
-}
-
-#nav-links li:hover{
-    color: white;
-
-    text-shadow: 0 0 10px gold;
-}
-
-/* HAMBURGER */
-
-#menu-toggle{
-    display: none;
-
-    color: gold;
-
-    font-size: 30px;
-
-    cursor: pointer;
-}
-
-/* MOBILE VIEW */
-
-@media(max-width:768px){
-
-    #menu-toggle{
-        display: block;
-    }
-
-   #nav-links{
-
-    display: none;
-
-    position: absolute;
-
-    top: 70px;
-   
-
-    background: rgba(0,0,0,0.95);
-
-    width: 220px;
-
-    flex-direction: column;
-
-    text-align: center;
-
-    padding: 20px 0;
-
-    border-left: 2px solid gold;
-
-    border-bottom: 2px solid gold;
-}
-
-    #nav-links.active{
-        display: flex;
-    }
-
-    #nav-links li{
-        padding: 15px 0;
-    }
-}
-       
-/* 
-    GOLD GLOW EFFECT */
-    #Head-1 h1{
-    text-shadow:
-    0 0 5px gold,
-    0 0 15px gold;
-}
-
-    /* MOBILE RESPONSIVE */
-    @media(max-width:900px){
-
-    #Container{
-        grid-template-columns: 1fr;
-    }
-
-    #Video-page video{
+        backdrop-filter: blur(10px);
+        position: fixed;
+        top: 0;
+        left: 0;
         width: 100%;
-    }
+        z-index: 9999;
+        background-attachment: fixed;
+      }
+      nav {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+      }
 
-    #Head-1 h1,
-    #Head-1 h2,
-    #Head-1 h3{
-        width: 90%;
-        text-align: center;
-    }
+      /* LOGO */
 
-    #nav ul{
-        gap: 10px;
-        padding: 0;
-    }
-}
-     
-/* MAKING BODY LITTLE MOVING PARTICLES */
-/* PARTICLES BACKGROUND */
+      #logo {
+        color: gold;
+        font-size: 24px;
+        font-weight: bold;
 
- 
-#particles-js{
+        text-shadow: 0 0 10px gold;
+      }
 
-    position: fixed;
+      /* NAV LINKS */
 
-    width: 100%;
-    height: 100%;
+      #nav-links {
+        display: flex;
+        gap: 20px;
+        list-style: none;
+      }
 
-    top: 0;
-    left: 0;
+      #nav-links li {
+        color: gold;
+        display: flex;
 
-    z-index: -1;
+        cursor: pointer;
 
-    pointer-events: none;
-}
+        transition: 0.3s;
+      }
 
-  /* EPIC GLOW HOVER TO THE HEADINGS */
-  #Head-1 h1:hover,
-#Head-1 h2:hover,
-#Head-1 h3:hover{
+      #nav-links li:hover {
+        color: white;
 
-    transform: scale(1.03);
+        text-shadow: 0 0 10px gold;
+      }
 
-    transition: 0.3s ease;
+      /* HAMBURGER */
 
-    box-shadow: 0 0 20px gold;
-}
- /* MORE CINEMATIC IN VERSES */
- .verse{
-  display: none;
-  padding: 15px;
-  margin-top: 10px;
-  border-radius: 10px;
-  color: white;
-  font-size: 18px;
-  animation: fade 1s;
-  box-shadow: 0 0 15px rgba(255,215,0,0.5);
-}
-  /* BLINKING CURSOR IN THE TYPING OF WELCOME TO HOME OF EPIGNOSIS */
-  #typing-text::after{
+      #menu-toggle {
+        display: none;
 
-    content: "|";
+        color: gold;
 
-    animation: blink 0.7s infinite;
+        font-size: 30px;
 
-    color: gold;
-}
+        cursor: pointer;
+      }
 
-@keyframes blink{
+      /* MOBILE VIEW */
 
-    50%{
-        opacity: 0;
-    }
-}
+      @media (max-width: 768px) {
+        #menu-toggle {
+          display: block;
+        }
 
-     /* image logo  */
-     /* FIRE GLOW LOGO */
+        #nav-links {
+          display: none;
 
-#fire-logo{
-    position: relative;
+          position: absolute;
 
-    width: 70px;
-    height: 70px;
+          top: 70px;
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
+          background: rgba(0, 0, 0, 0.95);
 
-/* IMAGE */
+          width: 220px;
 
-#fire-logo img{
-    width: 100%;
-    height: 100%;
+          flex-direction: column;
 
-    object-fit: cover;
+          text-align: center;
 
-    border-radius: 50%;
+          padding: 20px 0;
 
-    border: 2px solid gold;
+          border-left: 2px solid gold;
 
-    z-index: 2;
+          border-bottom: 2px solid gold;
+        }
 
-    position: relative;
+        #nav-links.active {
+          display: flex;
+        }
 
-    animation: logoFloat 3s ease-in-out infinite;
-}
+        #nav-links li {
+          padding: 15px 0;
+        }
+      }
 
-/* FIRE GLOW */
+      /* 
+    GOLD GLOW EFFECT */
+      #Head-1 h1 {
+        text-shadow:
+          0 0 5px gold,
+          0 0 15px gold;
+      }
 
-#fire-logo::before{
+      /* MOBILE RESPONSIVE */
+      @media (max-width: 900px) {
+        #Container {
+          grid-template-columns: 1fr;
+        }
 
-    content: "";
+        #Video-page video {
+          width: 100%;
+        }
 
-    position: absolute;
+        #Head-1 h1,
+        #Head-1 h2,
+        #Head-1 h3 {
+          width: 90%;
+          text-align: center;
+        }
 
-    width: 90px;
-    height: 90px;
+        #nav ul {
+          gap: 10px;
+          padding: 0;
+        }
+      }
 
-    border-radius: 50%;
+      /* MAKING BODY LITTLE MOVING PARTICLES */
+      /* PARTICLES BACKGROUND */
 
-    background: radial-gradient(circle,
-    rgba(255,215,0,0.9) 0%,
-    rgba(255,140,0,0.7) 40%,
-    rgba(255,0,0,0.3) 70%,
-    transparent 100%);
+      #particles-js {
+        position: fixed;
 
-    filter: blur(15px);
+        width: 100%;
+        height: 100%;
 
-    animation: firePulse 2s infinite;
+        top: 0;
+        left: 0;
 
-    z-index: 1;
-}
+        z-index: -1;
 
-/* FLOAT EFFECT */
+        pointer-events: none;
+      }
 
-@keyframes logoFloat{
+      /* EPIC GLOW HOVER TO THE HEADINGS */
+      #Head-1 h1:hover,
+      #Head-1 h2:hover,
+      #Head-1 h3:hover {
+        transform: scale(1.03);
 
-    0%{
-        transform: translateY(0px);
-    }
+        transition: 0.3s ease;
 
-    50%{
-        transform: translateY(-5px);
-    }
+        box-shadow: 0 0 20px gold;
+      }
+      /* MORE CINEMATIC IN VERSES */
+      .verse {
+        display: none;
+        padding: 15px;
+        margin-top: 10px;
+        border-radius: 10px;
+        color: white;
+        font-size: 18px;
+        animation: fade 1s;
+        box-shadow: 0 0 15px rgba(255, 215, 0, 0.5);
+      }
+      /* BLINKING CURSOR IN THE TYPING OF WELCOME TO HOME OF EPIGNOSIS */
+      #typing-text::after {
+        content: "|";
 
-    100%{
-        transform: translateY(0px);
-    }
-}
+        animation: blink 0.7s infinite;
 
-/* FIRE PULSE */
+        color: gold;
+      }
 
-@keyframes firePulse{
+      @keyframes blink {
+        50% {
+          opacity: 0;
+        }
+      }
 
-    0%{
-        transform: scale(1);
-        opacity: 0.8;
-    }
+      /* image logo  */
+      /* FIRE GLOW LOGO */
 
-    50%{
-        transform: scale(1.15);
-        opacity: 1;
-    }
+      #fire-logo {
+        position: relative;
 
-    100%{
-        transform: scale(1);
-        opacity: 0.8;
-    }
-}
+        width: 70px;
+        height: 70px;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      /* IMAGE */
+
+      #fire-logo img {
+        width: 100%;
+        height: 100%;
+
+        object-fit: cover;
+
+        border-radius: 50%;
+
+        border: 2px solid gold;
+
+        z-index: 2;
+
+        position: relative;
+
+        animation: logoFloat 3s ease-in-out infinite;
+      }
+
+      /* FIRE GLOW */
+
+      #fire-logo::before {
+        content: "";
+
+        position: absolute;
+
+        width: 90px;
+        height: 90px;
+
+        border-radius: 50%;
+
+        background: radial-gradient(
+          circle,
+          rgba(255, 215, 0, 0.9) 0%,
+          rgba(255, 140, 0, 0.7) 40%,
+          rgba(255, 0, 0, 0.3) 70%,
+          transparent 100%
+        );
+
+        filter: blur(15px);
+
+        animation: firePulse 2s infinite;
+
+        z-index: 1;
+      }
+
+      /* FLOAT EFFECT */
+
+      @keyframes logoFloat {
+        0% {
+          transform: translateY(0px);
+        }
+
+        50% {
+          transform: translateY(-5px);
+        }
+
+        100% {
+          transform: translateY(0px);
+        }
+      }
+
+      /* FIRE PULSE */
+
+      @keyframes firePulse {
+        0% {
+          transform: scale(1);
+          opacity: 0.8;
+        }
+
+        50% {
+          transform: scale(1.15);
+          opacity: 1;
+        }
+
+        100% {
+          transform: scale(1);
+          opacity: 0.8;
+        }
+      }
       /* BUTTON TO ACCESS BOOK PAGE */
-          /* BOOK ACCESS BUTTON */
+      /* BOOK ACCESS BUTTON */
 
-.book-access{
-    margin-top: 30px;
-    margin-left: 80%;
-    display: flex;
-    justify-content: center;
-    
-}
+      .book-access {
+        margin-top: 30px;
+        margin-left: 80%;
+        display: flex;
+        justify-content: center;
+      }
 
-.book-access button{
+      .book-access button {
+        background: linear-gradient(45deg, gold, orange);
 
-    background: linear-gradient(45deg,gold,orange);
+        color: black;
 
-    color: black;
+        border: none;
 
-    border: none;
+        padding: 10px 18epx;
 
-    padding: 10px 18epx;
+        border-radius: 12px;
 
-    border-radius: 12px;
+        font-size: small;
+        font-style: italic;
 
-    font-size:small;
-    font-style: italic;
+        font-weight: bold;
 
-    font-weight: bold;
+        cursor: pointer;
 
-    cursor: pointer;
+        transition: 0.4s ease;
 
-    transition: 0.4s ease;
+        box-shadow:
+          0 0 10px gold,
+          0 0 20px rgba(255, 215, 0, 0.5);
+      }
 
-    box-shadow:
-    0 0 10px gold,
-    0 0 20px rgba(255,215,0,0.5);
-}
+      /* HOVER EFFECT */
 
-/* HOVER EFFECT */
+      .book-access button:hover {
+        transform: translateY(-5px) scale(1.05);
 
-.book-access button:hover{
+        box-shadow:
+          0 0 20px gold,
+          0 0 40px orange;
 
-    transform: translateY(-5px) scale(1.05);
+        color: white;
+      }
 
-    box-shadow:
-    0 0 20px gold,
-    0 0 40px orange;
+      /* CLICK EFFECT */
 
-    color: white;
-}
-
-/* CLICK EFFECT */
-
-.book-access button:active{
-
-    transform: scale(0.95);
-}
+      .book-access button:active {
+        transform: scale(0.95);
+      }
     </style>
   </head>
   <body>
-      <!-- PARTICLES BACKGROUND -->
-     <div id="particles-js"></div>
+    <!-- PARTICLES BACKGROUND -->
+    <div id="particles-js"></div>
 
-  <!-- PARTICLES JAVASCRIPT -->
-  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <!-- PARTICLES JAVASCRIPT -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
 
-  <script>
-    particlesJS("particles-js", {
-      particles: {
-        number: {
-          value: 80
+    <script>
+      particlesJS("particles-js", {
+        particles: {
+          number: {
+            value: 80,
+          },
+
+          color: {
+            value: "#f5d76e",
+          },
+
+          shape: {
+            type: "circle",
+          },
+
+          opacity: {
+            value: 0.5,
+          },
+
+          size: {
+            value: 4,
+            random: true,
+          },
+
+          move: {
+            enable: true,
+            speed: 2,
+          },
         },
+      });
+    </script>
 
-        color: {
-          value: "#f5d76e"
-        },
+    <div id="loader">
+      <div class="glow-circle"></div>
 
-        shape: {
-          type: "circle"
-        },
-
-        opacity: {
-          value: 0.5
-        },
-
-        size: {
-          value: 4,
-          random: true
-        },
-
-        move: {
-          enable: true,
-          speed: 2
-        }
-      }
-    });
-  </script>
-
-      <div id="loader">
-
-    <div class="glow-circle"></div>
-
-    <h1 id="loader-text">EPIGNOSIS</h1>
-
-</div>
+      <h1 id="loader-text">EPIGNOSIS</h1>
+    </div>
 
     <div id="nav">
+      <div id="logo">EPIGNOSIS</div>
+      <div id="fire-logo">
+        <img src="./Themasinde1.jpeg" alt="" />
+      </div>
 
-    <div id="logo">EPIGNOSIS</div>
-          <div id="fire-logo">
-        <img src="./Themasinde1.jpeg" alt="">
-    </div>
+      <!-- HAMBURGER -->
+      <div id="menu-toggle">☰</div>
 
-    <!-- HAMBURGER -->
-    <div id="menu-toggle">
-        ☰
-    </div>
-
-    <nav>
+      <nav>
         <ul id="nav-links">
-            <li>Author</li>
-            <li>Contents</li>
-            <li>Contact</li>
+          <li>Author</li>
+          <li>Contents</li>
+          <li>Contact</li>
         </ul>
-    </nav>
+      </nav>
+    </div>
 
-</div>
-  
-
-       <div id="Head-1">
-          <h1>MASINDE JOEL</h1>
+    <div id="Head-1">
+      <h1>MASINDE JOEL</h1>
       <h2 id="typing-text"></h2>
-       <h3>Revealing Knowledge • Spiritual Depth • Truth</h3>
-
-       </div>
+      <h3>Revealing Knowledge • Spiritual Depth • Truth</h3>
+    </div>
     <div id="Container">
       <div id="Contents">
         <p>Contents Of The Book</p>
@@ -833,122 +780,105 @@
             Effective Leadership in the body of christ/Cooporate/Market-place
           </option>
         </select>
-                <!-- BOOK ACCESS AREA -->
-    <div class="book-access">
-
-        <a href="./Book.html">
+        <!-- BOOK ACCESS AREA -->
+        <div class="book-access">
+          <a href="./Book.html">
             <button>Read The Book</button>
-        </a>
-
-    </div>
+          </a>
+        </div>
       </div>
-          <div id="Motivation">
-                 <h1>Knowing Your Identity</h1>
-          <p>i] You are a King</p>
-          <p>ii] You are a priesthood</p>
-          <p>iii] You are a chosen generation</p>
-          <p>iv] You are a holy nation</p>
-
+      <div id="Motivation">
+        <h1>Knowing Your Identity</h1>
+        <p>i] You are a King</p>
+        <p>ii] You are a priesthood</p>
+        <p>iii] You are a chosen generation</p>
+        <p>iv] You are a holy nation</p>
       </div>
-      
-        <div id="Bible-quote">
 
-  <h1>Bible Quotes</h1>
+      <div id="Bible-quote">
+        <h1>Bible Quotes</h1>
 
-  <div class="verse active" id="A">
-    Psalms 119:130 NKJV [130] The entrance of Your words gives light;
-    It gives understanding to the simple.
-  </div>
+        <div class="verse active" id="A">
+          Psalms 119:130 NKJV [130] The entrance of Your words gives light; It
+          gives understanding to the simple.
+        </div>
 
-  <div class="verse" id="B">
-    Isaiah 33:6 NKJV [6] Wisdom and knowledge will be the stability
-    of your times, And the strength of salvation.
-  </div>
+        <div class="verse" id="B">
+          Isaiah 33:6 NKJV [6] Wisdom and knowledge will be the stability of
+          your times, And the strength of salvation.
+        </div>
 
-  <div class="verse" id="C">
-    Proverbs 25:2 NKJV [2] It is the glory of God to conceal a matter,
-    But the glory of kings is to search out a matter.
-  </div>
-   <div class="verse" id="D">
-    Proverbs 23:23 NKJV
-[23]Buy the truth, and do not sell it,Also wisdom and instruction and understanding.
-   </div>
-  </div>
-        <div id="Video-page">
+        <div class="verse" id="C">
+          Proverbs 25:2 NKJV [2] It is the glory of God to conceal a matter, But
+          the glory of kings is to search out a matter.
+        </div>
+        <div class="verse" id="D">
+          Proverbs 23:23 NKJV [23]Buy the truth, and do not sell it,Also wisdom
+          and instruction and understanding.
+        </div>
+      </div>
+      <div id="Video-page">
         <video controls src="./street-evangelism.mp4"></video>
       </div>
-</div>
- 
-  
-  
-         <!-- HAMBURGER MENU javascript -->
-  <script>
-const menuToggle = document.getElementById("menu-toggle");
-const navLinks = document.getElementById("nav-links");
+    </div>
 
-menuToggle.addEventListener("click", () => {
-    navLinks.classList.toggle("active");
-});
-</script>
+    <!-- HAMBURGER MENU javascript -->
+    <script>
+      const menuToggle = document.getElementById("menu-toggle");
+      const navLinks = document.getElementById("nav-links");
+
+      menuToggle.addEventListener("click", () => {
+        navLinks.classList.toggle("active");
+      });
+    </script>
     <!-- VERSES moving javascript -->
-     <script>
+    <script>
+      const verses = document.querySelectorAll(".verse");
 
-const verses = document.querySelectorAll(".verse");
+      let currentVerse = 0;
 
-let currentVerse = 0;
+      function showNextVerse() {
+        // REMOVE CURRENT ACTIVE
+        verses[currentVerse].classList.remove("active");
 
-function showNextVerse(){
+        // MOVE TO NEXT
+        currentVerse++;
 
-    // REMOVE CURRENT ACTIVE
-    verses[currentVerse].classList.remove("active");
+        // RESTART IF END REACHED
+        if (currentVerse >= verses.length) {
+          currentVerse = 0;
+        }
 
-    // MOVE TO NEXT
-    currentVerse++;
+        // SHOW NEXT VERSE
+        verses[currentVerse].classList.add("active");
+      }
 
-    // RESTART IF END REACHED
-    if(currentVerse >= verses.length){
-        currentVerse = 0;
-    }
+      // CHANGE EVERY 4 SECONDS
+      setInterval(showNextVerse, 4000);
+    </script>
+    <!-- TYPING OF LETTER BY LETTER WELCOME TO THE HOME OF EPIGNOSIS -->
+    <script>
+      const text = "WELCOME TO THE HOME OF EPIGNOSIS";
 
-    // SHOW NEXT VERSE
-    verses[currentVerse].classList.add("active");
-}
+      let index = 0;
 
-// CHANGE EVERY 4 SECONDS
-setInterval(showNextVerse, 4000);
+      function typeText() {
+        if (index < text.length) {
+          document.getElementById("typing-text").innerHTML +=
+            text.charAt(index);
 
-</script>
- <!-- TYPING OF LETTER BY LETTER WELCOME TO THE HOME OF EPIGNOSIS -->
-   <script>
+          index++;
 
-const text = "WELCOME TO THE HOME OF EPIGNOSIS";
+          setTimeout(typeText, 100);
+        }
+      }
 
-let index = 0;
+      /* WAIT UNTIL LOADER DISAPPEARS */
 
-function typeText(){
-
-    if(index < text.length){
-
-        document.getElementById("typing-text").innerHTML += text.charAt(index);
-
-        index++;
-
-        setTimeout(typeText, 100);
-    }
-}
-
-/* WAIT UNTIL LOADER DISAPPEARS */
-
-setTimeout(() => {
-
-    typeText();
-
-}, 5000);
-
-</script>
-
-</body>
-   <script src="">
-   </script>
-   
+      setTimeout(() => {
+        typeText();
+      }, 5000);
+    </script>
+  </body>
+  <script src=""></script>
 </html>
