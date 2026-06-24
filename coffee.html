@@ -10,6 +10,59 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <style>
+       /* STYLING WHATSAPP BUTTON */
+.whatsapp-float{
+    position:fixed;
+    width:60px;
+    height:60px;
+    bottom:20px;
+    right:20px;
+    background:#25D366;
+    color:white;
+    border-radius:50%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:35px;
+    text-decoration:none;
+    z-index:9999;
+    box-shadow:0 4px 12px rgba(0,0,0,0.3);
+    animation:pulse 1.5s infinite;
+    transition:0.3s;
+}
+
+.whatsapp-float:hover{
+    transform:scale(1.1);
+    box-shadow:0 6px 18px rgba(0,0,0,0.4);
+}
+
+@keyframes pulse{
+    0%{
+        transform:scale(1);
+        box-shadow:0 0 0 0 rgba(37,211,102,0.7);
+    }
+    70%{
+        transform:scale(1.08);
+        box-shadow:0 0 0 15px rgba(37,211,102,0);
+    }
+    100%{
+        transform:scale(1);
+        box-shadow:0 0 0 0 rgba(37,211,102,0);
+    }
+}
+
+/* Mobile */
+@media(max-width:768px){
+    .whatsapp-float{
+        width:55px;
+        height:55px;
+        font-size:30px;
+        bottom:15px;
+        right:15px;
+    }
+}
+
+      
       body {
         background-image: url("./pexels-clickerhappy-9315.jpg");
         background-position: center;
@@ -560,6 +613,8 @@ button {
   </head>
   <canvas id="cursorCanvas"></canvas>
   <body>
+
+         
         <div id="nav-bar">
 
     <div class="logo">KAJOINT ☕</div>
