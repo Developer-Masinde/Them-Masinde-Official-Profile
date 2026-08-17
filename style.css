@@ -1,17 +1,27 @@
 :root {
-  --navy: #16232a;
-  --teal: #028090;
-  --teal-dark: #025e63;
-  --seafoam: #00a896;
-  --mint: #02c39a;
-  --off-white: #f5f9f8;
+  --navy: #123b52;
+  --navy-light: #1b5875;
+
+  --teal: #00a8b5;
+  --teal-dark: #007c91;
+  --seafoam: #19c7c9;
+  --mint: #35d6b5;
+
+  --hospital-blue: #0b8fc4;
+  --hospital-light: #eaf9ff;
+
+  --off-white: #f5fbfd;
   --card: #ffffff;
-  --border: #e2ebe9;
-  --gray: #5b6b6e;
-  --danger: #c94c4c;
-  --safe: #1f9d63;
+  --border: #d8edf2;
+
+  --gray: #526b75;
+  --danger: #d94b55;
+  --safe: #15966a;
+
   --radius: 14px;
-  --shadow: 0 10px 30px -12px rgba(2, 44, 51, 0.18);
+
+  --shadow:
+    0 10px 30px -12px rgba(0, 90, 120, 0.20);
 }
 
 
@@ -27,16 +37,44 @@ html,
 body {
   margin: 0;
   padding: 0;
-  background: var(--off-white);
+
+  min-height: 100%;
+
+  /*
+    CLEAR MEDICAL BACKGROUND
+    No overlay or gradient.
+  */
+
+  background-image: url("./images/Medical Web Background.jpg");
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+
   color: var(--navy);
-  font-family: -apple-system, "Segoe UI", Helvetica, Arial, sans-serif;
+
+  font-family:
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Helvetica,
+    Arial,
+    sans-serif;
+
   line-height: 1.5;
 }
+
 
 h1,
 h2,
 h3 {
-  font-family: Georgia, "Iowan Old Style", "Times New Roman", serif;
+  font-family:
+    Georgia,
+    "Iowan Old Style",
+    "Times New Roman",
+    serif;
+
   margin: 0 0 0.3em 0;
 }
 
@@ -47,7 +85,9 @@ h3 {
 
 .wrap {
   max-width: 1040px;
+
   margin: 0 auto;
+
   padding: 0 1.5rem;
 }
 
@@ -58,34 +98,41 @@ h3 {
 
 .bg-shape {
   position: fixed;
+
   border-radius: 50%;
+
   z-index: 0;
+
   pointer-events: none;
 }
+
 
 .shape-a {
   width: 480px;
   height: 480px;
 
-  background: radial-gradient(
-    circle,
-    rgba(0, 168, 150, 0.14),
-    transparent 70%
-  );
+  background:
+    radial-gradient(
+      circle,
+      rgba(0, 168, 181, 0.10),
+      transparent 70%
+    );
 
   top: -180px;
   right: -160px;
 }
 
+
 .shape-b {
   width: 420px;
   height: 420px;
 
-  background: radial-gradient(
-    circle,
-    rgba(2, 195, 154, 0.12),
-    transparent 70%
-  );
+  background:
+    radial-gradient(
+      circle,
+      rgba(53, 214, 181, 0.08),
+      transparent 70%
+    );
 
   bottom: -160px;
   left: -160px;
@@ -98,61 +145,125 @@ h3 {
 
 .page-header {
   position: relative;
+
   z-index: 1;
+
   padding: 3.2rem 0 2.4rem;
 }
 
 
-/* Header content with photo */
+/* ==========================================
+   HEADER CONTENT
+========================================== */
 
 .header-content {
   display: flex;
+
   align-items: flex-start;
+
   justify-content: space-between;
+
   gap: 2rem;
 }
 
+
 .header-text {
   flex: 1;
+
+  padding: 1.25rem 1.5rem;
+
+  border-radius: 18px;
+
+  /*
+    Bright clinical panel.
+    The background image remains
+    clearly visible around it.
+  */
+
+  background: rgba(255, 255, 255, 0.90);
+
+  border: 1px solid rgba(255, 255, 255, 0.95);
+
+  box-shadow:
+    0 12px 35px rgba(0, 92, 120, 0.14);
+
+  backdrop-filter: blur(4px);
 }
 
 
-/* Small title above main heading */
+/* ==========================================
+   EYEBROW
+========================================== */
 
 .eyebrow {
   text-transform: uppercase;
+
   letter-spacing: 0.14em;
+
   font-size: 0.72rem;
-  font-weight: 700;
-  color: var(--teal);
-  margin: 0 0 0.6rem 0;
+
+  font-weight: 800;
+
+  color: var(--hospital-blue);
+
+  margin: 0 0 0.65rem 0;
+
+  text-shadow:
+    0 1px 8px rgba(11, 143, 196, 0.12);
 }
 
 
-/* Main title */
+/* ==========================================
+   MAIN TITLE
+========================================== */
 
 .page-header h1 {
   font-size: 2.4rem;
-  color: var(--navy);
+
+  color: #075276;
+
+  font-weight: 700;
+
+  letter-spacing: -0.02em;
+
+  text-shadow:
+    0 2px 12px rgba(0, 126, 160, 0.12);
 }
 
 
-/* Developer credit */
+/* ==========================================
+   DEVELOPER CREDIT
+========================================== */
 
 .developer-credit {
   margin: -0.1rem 0 0.8rem;
-  color: var(--teal-dark);
+
+  color: #008a9c;
+
   font-size: 0.82rem;
-  font-weight: 600;
+
+  font-weight: 700;
+
+  letter-spacing: 0.01em;
 }
 
 
-/* Description */
+/* ==========================================
+   DESCRIPTION
+========================================== */
 
 .lede {
   max-width: 640px;
-  color: var(--gray);
+
+  color: #456773;
+
   font-size: 1.02rem;
+
+  line-height: 1.7;
+
+  margin-bottom: 0;
+
+  font-weight: 450;
 }
 
 
@@ -162,32 +273,105 @@ h3 {
 
 .profile-photo {
   width: 100px;
+
   height: 100px;
 
   flex-shrink: 0;
 
   border-radius: 50%;
+
   overflow: hidden;
 
-  background: var(--off-white);
+  position: relative;
 
   border: 4px solid #ffffff;
 
+  background: var(--off-white);
+
   box-shadow:
-    0 8px 24px rgba(2, 44, 51, 0.18),
-    0 0 0 2px rgba(0, 168, 150, 0.18);
+    0 0 0 3px rgba(0, 168, 181, 0.15),
+    0 0 18px rgba(0, 168, 181, 0.35),
+    0 8px 24px rgba(0, 70, 90, 0.18);
+
+  animation:
+    profileSwing 4s ease-in-out infinite,
+    profileGlow 2.5s ease-in-out infinite;
+
+  transform-origin: top center;
 }
+
 
 .profile-photo img {
   width: 100%;
+
   height: 100%;
 
   display: block;
 
   object-fit: cover;
 
-  /* Keeps face/hat positioned correctly */
   object-position: center 28%;
+}
+
+
+/* ==========================================
+   PROFILE SWING
+========================================== */
+
+@keyframes profileSwing {
+
+  0% {
+    transform: rotate(0deg);
+  }
+
+  20% {
+    transform: rotate(3deg);
+  }
+
+  40% {
+    transform: rotate(-3deg);
+  }
+
+  60% {
+    transform: rotate(2deg);
+  }
+
+  80% {
+    transform: rotate(-2deg);
+  }
+
+  100% {
+    transform: rotate(0deg);
+  }
+
+}
+
+
+/* ==========================================
+   PROFILE GLOW
+========================================== */
+
+@keyframes profileGlow {
+
+  0%,
+  100% {
+
+    box-shadow:
+      0 0 0 3px rgba(0, 168, 181, 0.15),
+      0 0 16px rgba(0, 168, 181, 0.30),
+      0 8px 24px rgba(0, 70, 90, 0.18);
+
+  }
+
+  50% {
+
+    box-shadow:
+      0 0 0 4px rgba(53, 214, 181, 0.28),
+      0 0 30px rgba(0, 184, 205, 0.65),
+      0 10px 28px rgba(0, 70, 90, 0.22);
+
+  }
+
 }
 
 
@@ -197,16 +381,20 @@ h3 {
 
 .layout {
   position: relative;
+
   z-index: 1;
 
   display: grid;
+
   grid-template-columns: 1.15fr 1fr;
 
   gap: 1.6rem;
+
   align-items: start;
 
   padding-bottom: 3rem;
 }
+
 
 @media (max-width: 800px) {
 
@@ -222,7 +410,7 @@ h3 {
 ========================================== */
 
 .card {
-  background: var(--card);
+  background: rgba(255, 255, 255, 0.97);
 
   border: 1px solid var(--border);
 
@@ -233,8 +421,10 @@ h3 {
   padding: 1.8rem;
 }
 
+
 .card h2 {
   font-size: 1.25rem;
+
   color: var(--teal-dark);
 }
 
@@ -248,8 +438,6 @@ h3 {
 }
 
 
-/* Dynamic fields */
-
 .fields-grid {
   display: grid;
 
@@ -259,8 +447,6 @@ h3 {
 }
 
 
-/* Individual field */
-
 .field {
   display: flex;
 
@@ -269,12 +455,15 @@ h3 {
   gap: 0.35rem;
 }
 
+
 .field.span-2 {
   grid-column: 1 / -1;
 }
 
 
-/* Labels */
+/* ==========================================
+   LABELS
+========================================== */
 
 .field label {
   font-size: 0.82rem;
@@ -285,7 +474,9 @@ h3 {
 }
 
 
-/* Number inputs */
+/* ==========================================
+   NUMBER INPUTS
+========================================== */
 
 .field input[type="number"] {
   width: 100%;
@@ -310,14 +501,16 @@ h3 {
     background 0.2s ease;
 }
 
+
 .field input[type="number"]:focus {
   outline: none;
 
   border-color: var(--seafoam);
 
-  box-shadow: 0 0 0 2px rgba(0, 168, 150, 0.12);
+  box-shadow:
+    0 0 0 3px rgba(25, 199, 201, 0.14);
 
-  background: #fff;
+  background: #ffffff;
 }
 
 
@@ -336,6 +529,7 @@ h3 {
 
   width: fit-content;
 }
+
 
 .toggle button {
   border: none;
@@ -359,15 +553,16 @@ h3 {
     color 0.2s ease;
 }
 
+
 .toggle button.active {
   background: var(--teal);
 
-  color: #fff;
+  color: #ffffff;
 }
 
 
 /* ==========================================
-   FORM ACTION BUTTONS
+   FORM ACTIONS
 ========================================== */
 
 .form-actions {
@@ -388,6 +583,7 @@ h3 {
 
 button#submit-btn {
   width: 68px;
+
   height: 68px;
 
   padding: 7px;
@@ -396,9 +592,14 @@ button#submit-btn {
 
   border-radius: 50%;
 
-  background: var(--teal);
+  background:
+    linear-gradient(
+      135deg,
+      #00a8b5,
+      #007c91
+    );
 
-  color: #fff;
+  color: #ffffff;
 
   font-family: inherit;
 
@@ -419,7 +620,7 @@ button#submit-btn {
   cursor: pointer;
 
   box-shadow:
-    0 5px 14px rgba(2, 128, 144, 0.22);
+    0 5px 14px rgba(0, 128, 150, 0.25);
 
   transition:
     background 0.2s ease,
@@ -427,14 +628,22 @@ button#submit-btn {
     box-shadow 0.2s ease;
 }
 
+
 button#submit-btn:hover {
-  background: var(--teal-dark);
+
+  background:
+    linear-gradient(
+      135deg,
+      #00bac5,
+      #006f84
+    );
 
   transform: translateY(-2px);
 
   box-shadow:
-    0 7px 18px rgba(2, 128, 144, 0.28);
+    0 7px 20px rgba(0, 128, 150, 0.35);
 }
+
 
 button#submit-btn:active {
   transform: scale(0.95);
@@ -471,8 +680,10 @@ button.ghost {
     transform 0.2s ease;
 }
 
+
 button.ghost:hover {
-  background: var(--off-white);
+
+  background: var(--hospital-light);
 
   color: var(--teal-dark);
 
@@ -482,9 +693,12 @@ button.ghost:hover {
 }
 
 
-/* Keyboard accessibility */
+/* ==========================================
+   KEYBOARD ACCESSIBILITY
+========================================== */
 
 button:focus-visible {
+
   outline: 2px solid var(--seafoam);
 
   outline-offset: 2px;
@@ -496,6 +710,7 @@ button:focus-visible {
 ========================================== */
 
 .result-empty {
+
   color: var(--gray);
 
   font-size: 0.95rem;
@@ -504,6 +719,7 @@ button:focus-visible {
 
   text-align: center;
 }
+
 
 .result-body {
   margin-top: 0.5rem;
@@ -515,6 +731,7 @@ button:focus-visible {
 ========================================== */
 
 .gauge-wrap {
+
   position: relative;
 
   width: 220px;
@@ -522,23 +739,28 @@ button:focus-visible {
   margin: 0.5rem auto 0.2rem;
 }
 
+
 .gauge {
   width: 100%;
 
   display: block;
 }
 
+
 .gauge-track {
+
   fill: none;
 
-  stroke: #e6efee;
+  stroke: #dceff2;
 
   stroke-width: 16;
 
   stroke-linecap: round;
 }
 
+
 .gauge-fill {
+
   fill: none;
 
   stroke: var(--teal);
@@ -562,6 +784,7 @@ button:focus-visible {
 ========================================== */
 
 .gauge-value {
+
   position: absolute;
 
   left: 0;
@@ -573,7 +796,9 @@ button:focus-visible {
   text-align: center;
 }
 
+
 #prob-value {
+
   display: block;
 
   font-family: Georgia, serif;
@@ -585,7 +810,9 @@ button:focus-visible {
   color: var(--navy);
 }
 
+
 .gauge-unit {
+
   font-size: 0.72rem;
 
   color: var(--gray);
@@ -601,6 +828,7 @@ button:focus-visible {
 ========================================== */
 
 .risk-label {
+
   text-align: center;
 
   font-weight: 700;
@@ -616,14 +844,18 @@ button:focus-visible {
   margin: 0.8rem auto 1.4rem;
 }
 
+
 .risk-label.elevated {
-  background: #fbeaea;
+
+  background: #fff0f1;
 
   color: var(--danger);
 }
 
+
 .risk-label.normal {
-  background: #e8f7ef;
+
+  background: #e9f9f1;
 
   color: var(--safe);
 }
@@ -634,6 +866,7 @@ button:focus-visible {
 ========================================== */
 
 .breakdown h3 {
+
   font-size: 0.85rem;
 
   text-transform: uppercase;
@@ -647,7 +880,9 @@ button:focus-visible {
   margin-bottom: 0.6rem;
 }
 
+
 .breakdown ul {
+
   list-style: none;
 
   margin: 0;
@@ -661,7 +896,9 @@ button:focus-visible {
   gap: 0.5rem;
 }
 
+
 .breakdown li {
+
   display: flex;
 
   justify-content: space-between;
@@ -678,9 +915,12 @@ button:focus-visible {
 }
 
 
-/* Direction badges */
+/* ==========================================
+   DIRECTION BADGES
+========================================== */
 
 .breakdown .dir {
+
   font-weight: 700;
 
   font-size: 0.78rem;
@@ -690,14 +930,18 @@ button:focus-visible {
   border-radius: 999px;
 }
 
+
 .dir.up {
-  background: #fbeaea;
+
+  background: #fff0f1;
 
   color: var(--danger);
 }
 
+
 .dir.down {
-  background: #e8f7ef;
+
+  background: #e9f9f1;
 
   color: var(--safe);
 }
@@ -708,6 +952,7 @@ button:focus-visible {
 ========================================== */
 
 .disclaimer {
+
   margin-top: 1.4rem;
 
   font-size: 0.76rem;
@@ -725,20 +970,21 @@ button:focus-visible {
 ========================================== */
 
 .page-footer {
+
   position: relative;
 
   z-index: 1;
 
   padding: 1.4rem 0 2.4rem;
 
-  color: var(--gray);
+  color: #52717b;
 
   font-size: 0.8rem;
 }
 
 
 /* ==========================================
-   RESPONSIVE DESIGN
+   MOBILE RESPONSIVE
 ========================================== */
 
 @media (max-width: 600px) {
@@ -748,210 +994,48 @@ button:focus-visible {
   }
 
 
-  /* Header */
+  /* HEADER */
 
   .page-header {
+
     padding: 2.2rem 0 1.6rem;
   }
 
+
   .header-content {
+
     align-items: center;
 
     gap: 1rem;
   }
 
+
+  .header-text {
+
+    padding: 1rem;
+  }
+
+
   .page-header h1 {
+
     font-size: 2rem;
   }
 
+
   .lede {
+
     font-size: 0.94rem;
+
+    line-height: 1.6;
   }
 
 
-  /* Profile photo */
+  /* PROFILE PHOTO */
 
   .profile-photo {
+
     width: 70px;
 
-    height: 70px;
-
-    border-width: 3px;
-  }
-
-  .profile-photo img {
-    object-position: center 28%;
-  }
-
-
-  /* Developer credit */
-
-  .developer-credit {
-    font-size: 0.75rem;
-  }
-
-
-  /* Cards */
-
-  .card {
-    padding: 1.25rem;
-  }
-
-
-  /* Fields */
-
-  .fields-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .field.span-2 {
-    grid-column: auto;
-  }
-
-
-  /* Gauge */
-
-  .gauge-wrap {
-    width: 200px;
-  }
-
-
-  /* Buttons */
-
-  .form-actions {
-    margin-top: 1rem;
-  }
-
-  button#submit-btn {
-    width: 58px;
-
-    height: 58px;
-
-    font-size: 0.64rem;
-  }
-
-  button.ghost {
-    padding: 0.48rem 0.9rem;
-
-    font-size: 0.76rem;
-  }
-}
-
-
-/* MAKING THE PROFI;LE PHOTO ON THE TOP RIGHT SWING WITH GLOW */
-/* ==========================================
-   SWINGING GLOW PROFILE PHOTO
-========================================== */
-
-.profile-photo {
-  width: 100px;
-  height: 100px;
-
-  flex-shrink: 0;
-
-  border-radius: 50%;
-  overflow: hidden;
-
-  position: relative;
-
-  border: 4px solid #ffffff;
-
-  background: var(--off-white);
-
-  /* Soft initial glow */
-  box-shadow:
-    0 0 0 3px rgba(0, 168, 150, 0.15),
-    0 0 18px rgba(0, 168, 150, 0.35),
-    0 8px 24px rgba(2, 44, 51, 0.18);
-
-  /* Gentle swinging animation */
-  animation:
-    profileSwing 4s ease-in-out infinite,
-    profileGlow 2.5s ease-in-out infinite;
-
-  transform-origin: top center;
-}
-
-
-/* Photo itself */
-
-.profile-photo img {
-  width: 100%;
-  height: 100%;
-
-  display: block;
-
-  object-fit: cover;
-
-  object-position: center 28%;
-}
-
-
-/* ==========================================
-   GENTLE SWING
-========================================== */
-
-@keyframes profileSwing {
-
-  0% {
-    transform: rotate(0deg);
-  }
-
-  20% {
-    transform: rotate(3deg);
-  }
-
-  40% {
-    transform: rotate(-3deg);
-  }
-
-  60% {
-    transform: rotate(2deg);
-  }
-
-  80% {
-    transform: rotate(-2deg);
-  }
-
-  100% {
-    transform: rotate(0deg);
-  }
-
-}
-
-
-/* ==========================================
-   SOFT GLOW PULSE
-========================================== */
-
-@keyframes profileGlow {
-
-  0%,
-  100% {
-    box-shadow:
-      0 0 0 3px rgba(0, 168, 150, 0.15),
-      0 0 16px rgba(0, 168, 150, 0.30),
-      0 8px 24px rgba(2, 44, 51, 0.18);
-  }
-
-  50% {
-    box-shadow:
-      0 0 0 4px rgba(2, 195, 154, 0.25),
-      0 0 30px rgba(0, 168, 150, 0.65),
-      0 10px 28px rgba(2, 44, 51, 0.22);
-  }
-
-}
-
-
-/* ==========================================
-   MOBILE
-========================================== */
-
-@media (max-width: 600px) {
-
-  .profile-photo {
-    width: 70px;
     height: 70px;
 
     border-width: 3px;
@@ -961,8 +1045,95 @@ button:focus-visible {
       profileGlow 2.8s ease-in-out infinite;
   }
 
+
   .profile-photo img {
+
     object-position: center 28%;
   }
 
+
+  /* DEVELOPER CREDIT */
+
+  .developer-credit {
+
+    font-size: 0.75rem;
+  }
+
+
+  /* CARDS */
+
+  .card {
+
+    padding: 1.25rem;
+  }
+
+
+  /* FIELDS */
+
+  .fields-grid {
+
+    grid-template-columns: 1fr;
+  }
+
+
+  .field.span-2 {
+
+    grid-column: auto;
+  }
+
+
+  /* GAUGE */
+
+  .gauge-wrap {
+
+    width: 200px;
+  }
+
+
+  /* BUTTONS */
+
+  .form-actions {
+
+    margin-top: 1rem;
+  }
+
+
+  button#submit-btn {
+
+    width: 58px;
+
+    height: 58px;
+
+    font-size: 0.64rem;
+  }
+
+
+  button.ghost {
+
+    padding: 0.48rem 0.9rem;
+
+    font-size: 0.76rem;
+  }
+
 }
+
+
+/* ==========================================
+   REDUCED MOTION ACCESSIBILITY
+========================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .profile-photo {
+
+    animation: none;
+  }
+
+  button#submit-btn,
+  button.ghost {
+
+    transition: none;
+  }
+
+}
+  
