@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+<style>
+
+   body {
+    background-image: url("./CALCULATOR-BACKGROUND.jpg");
+      
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+   
+   }
+     
+    
+
+#calculator {
+    
+    border-radius: 50px;
+    border: 5px solid yellow;
+    font-family: Arial, Helvetica, sans-serif;
+    max-width: 450px;
+    overflow: hidden;
+    background-image: url("./NICE-calculator\ background.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    justify-self: center;
+   
+}
+
+#display {
+    width: 50%;
+    padding: 2cqh;
+    text-align: right;
+    border: 2px solid black; 
+    font-size: 3rem;
+    background-color: rgb(79, 206, 206);
+    color: white;
+}
+
+#keys {
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 2px;
+}
+
+button {
+    width: 80px;
+    height: 80px;
+    border-radius: 20px;
+    border: none;
+    background-color: chocolate;
+    color: rgb(10, 10, 10);
+    font-size: 2rem;
+    font-weight: bold;
+    cursor:pointer ;
+}
+button:hover {
+    background-color: rgb(103, 103, 236);
+}
+button:active {
+    background-color: rgb(235, 235, 12); 
+}
+
+.operator-btn {
+     background-color: rgb(117, 145, 75);
+}
+.operator-btn:hover {
+     background-color: rgb(89, 90, 88);
+}
+
+.operator-btn:active {
+       background-color: rgb(226, 65, 7);
+}
+          #copy {
+            text-align: center;
+            font-size: large;
+            color: white;
+             }
+          
+            #schl{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+       }
+         
+          #schl h1 {
+            text-align: center;
+            font-size: xx-large;
+            color: rgb(250, 250, 8);
+            background-color: gray;
+            display: inline-flex;
+            width: fit-content;
+            margin: auto;
+           
+          }
+             #schl p {
+              text-align: center;
+            font-size: large;
+            color: rgb(236, 236, 231);
+          }
+</style>
+</head>
+<body>
+      <div id="schl">
+        <h1>School Approved Calculator</h1>
+        <p>The below calculator is approved for use in school and business</p>
+
+      </div>
+    <div id="calculator">
+       
+<input id="display" readonly>
+<div id="keys">
+    <button onclick="appendToDisplay(`+`)" class="operator-btn">+</button>
+    <button onclick="appendToDisplay(`7`)">7</button>
+    <button onclick="appendToDisplay(`8`)">8</button>
+    <button onclick="appendToDisplay(`9`)">9</button>
+    <button onclick="appendToDisplay(`-`)" class="operator-btn">-</button>
+    <button onclick="appendToDisplay(`4`)">4</button>
+    <button onclick="appendToDisplay(`5`)">5</button>
+    <button onclick="appendToDisplay(`6`)">6</button>
+    <button onclick="appendToDisplay(`*`)" class="operator-btn">*</button>
+    <button onclick="appendToDisplay(`1`)">1</button>
+    <button onclick="appendToDisplay(`2`)">2</button>
+    <button onclick="appendToDisplay(`3`)">3</button>
+    <button onclick="appendToDisplay(`/`)" class="operator-btn">/</button>
+    <button onclick="appendToDisplay(`0`)">0</button>
+    <button onclick="appendToDisplay(`.`)">.</button>
+       <button onclick="calculate()">=</button>
+       <button onclick="clearDisplay()" class="operator-btn">C</button>
+
+
+</div>
+
+
+    </div>
+    <hr> 
+    <div id="copy">
+        &copf; <b>2026 Masinde The Developer.All rights reserved.</b>
+    </div>
+
+
+</body>
+<script src="./indexcalc.js"></script>
+</html>

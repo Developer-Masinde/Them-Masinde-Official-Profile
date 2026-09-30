@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>PEFA Soweto Cathedral | Admin Dashboard</title>
+
+
+    <!-- =====================================================
+         SUPABASE CDN
+    ====================================================== -->
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+
+    <!-- =====================================================
+         SUPABASE CONNECTION
+         
+         IMPORTANT:
+         This is loaded ONLY ONCE.
+    ====================================================== -->
+
+    <script src="../supabase.js"></script>
+
+
+    <!-- =====================================================
+         DASHBOARD CSS
+    ====================================================== -->
+
+    <link
+        rel="stylesheet"
+        href="./dashboard.css"
+    >
+
+</head>
+
+
+<body>
+
+
+<!-- =========================================================
+     HEADER
+========================================================= -->
+
+<header class="dashboard-header">
+
+    <div class="header-brand">
+
+        <div>
+
+            <h1>PEFA Soweto Cathedral</h1>
+
+            <p>Administration Dashboard</p>
+
+        </div>
+
+    </div>
+
+
+    <button
+        type="button"
+        id="logout-btn"
+        class="logout-btn"
+    >
+        Log Out
+    </button>
+
+</header>
+
+
+
+<!-- =========================================================
+     MAIN DASHBOARD
+========================================================= -->
+
+<main class="dashboard-container">
+
+
+    <!-- =====================================================
+         WELCOME
+    ====================================================== -->
+
+    <section class="dashboard-welcome">
+
+        <span class="welcome-label">
+            ADMINISTRATION
+        </span>
+
+        <h2>
+            Welcome, Administrator
+        </h2>
+
+        <p>
+            Manage church media and prayer requests from
+            one central dashboard.
+        </p>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         CHURCH MEDIA
+    ====================================================== -->
+
+    <section class="dashboard-section">
+
+        <div class="section-heading">
+
+            <div>
+
+                <h2>Church Media</h2>
+
+                <p>
+                    Upload and manage photos and videos
+                    displayed on the church website.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- =================================================
+             UPLOAD FORM
+        ================================================== -->
+
+        <form
+            id="uploadForm"
+            class="upload-form"
+        >
+
+            <div class="upload-field">
+
+                <label for="mediaFile">
+                    Select Photo or Video
+                </label>
+
+
+                <input
+                    type="file"
+                    id="mediaFile"
+                    name="mediaFile"
+                    accept="image/*,video/*"
+                    required
+                >
+
+
+                <small>
+                    Supported: JPG, PNG, WEBP, GIF,
+                    MP4, MOV, WEBM and other
+                    browser-supported media.
+                </small>
+
+            </div>
+
+
+            <button
+                type="submit"
+                id="upload-btn"
+            >
+                Upload Media
+            </button>
+
+
+        </form>
+
+
+        <!-- UPLOAD MESSAGE -->
+
+        <div
+            id="uploadStatus"
+            class="upload-status"
+            aria-live="polite"
+        ></div>
+
+
+
+        <!-- =================================================
+             MEDIA HEADER
+        ================================================== -->
+
+        <div class="media-heading">
+
+            <div>
+
+                <h3>Uploaded Media</h3>
+
+                <p>
+                    Photos and videos currently stored
+                    in church media.
+                </p>
+
+            </div>
+
+
+            <button
+                type="button"
+                id="refresh-media-btn"
+                class="secondary-btn"
+            >
+                ↻ Refresh
+            </button>
+
+        </div>
+
+
+
+        <!-- MEDIA LIST -->
+
+        <div
+            id="mediaList"
+            class="media-list"
+        >
+
+            <div class="dashboard-loading">
+                Loading media...
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         PRAYER REQUESTS
+    ====================================================== -->
+
+    <section class="dashboard-section prayer-section">
+
+        <div class="section-heading">
+
+            <div>
+
+                <h2>Prayer Requests</h2>
+
+                <p>
+                    View and manage prayer requests submitted
+                    through the church website.
+                </p>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- SEARCH -->
+
+        <div class="prayer-toolbar">
+
+            <input
+                type="text"
+                id="search-box"
+                placeholder="Search by name or phone..."
+            >
+
+
+            <div class="prayer-toolbar-actions">
+
+                <span id="count-label">
+                    0 total
+                </span>
+
+
+                <button
+                    type="button"
+                    id="refresh-btn"
+                    class="secondary-btn"
+                >
+                    ↻ Refresh
+                </button>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- LOADING -->
+
+        <div
+            id="loading"
+            class="dashboard-loading"
+            style="display:none;"
+        >
+            Loading prayer requests...
+        </div>
+
+
+
+        <!-- EMPTY -->
+
+        <div
+            id="empty-state"
+            class="empty-state"
+            style="display:none;"
+        >
+            No prayer requests found.
+        </div>
+
+
+
+        <!-- TABLE -->
+
+        <div class="table-wrapper">
+
+            <table>
+
+                <thead>
+
+                    <tr>
+
+                        <th>Date</th>
+
+                        <th>Name</th>
+
+                        <th>Phone</th>
+
+                        <th>Email</th>
+
+                        <th>Prayer Request</th>
+
+                        <th>Status</th>
+
+                    </tr>
+
+                </thead>
+
+
+                <tbody id="requests-body"></tbody>
+
+            </table>
+
+        </div>
+
+    </section>
+
+
+</main>
+
+
+
+<!-- =========================================================
+     DASHBOARD JAVASCRIPT
+
+     IMPORTANT:
+     dashboard.js must be in THIS SAME folder.
+========================================================= -->
+
+<script src="./js/dashboard.js"></script>
+
+
+</body>
+
+</html>

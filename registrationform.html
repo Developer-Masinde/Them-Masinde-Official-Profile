@@ -1,0 +1,136 @@
+<?php
+include "./backend/connect_db.php";
+
+?>
+
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quick Registration Form</title>
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Arial, sans-serif;
+      }
+
+      body {
+        background: #0f172a;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+      }
+
+      .form-container {
+        background: white;
+        padding: 30px;
+        width: 350px;
+        border-radius: 15px;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+      }
+
+      .form-container h2 {
+        text-align: center;
+        color: #0f172a;
+        margin-bottom: 20px;
+      }
+
+      .input-group {
+        margin-bottom: 15px;
+      }
+
+      .input-group label {
+        display: block;
+        margin-bottom: 5px;
+        font-weight: bold;
+        color: #333;
+      }
+
+      .input-group input,
+      .input-group select {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        outline: none;
+      }
+
+      .input-group input:focus,
+      .input-group select:focus {
+        border-color: #2563eb;
+      }
+
+      .btn {
+        width: 100%;
+        padding: 12px;
+        background: #2563eb;
+        color: white;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        font-size: 16px;
+        font-weight: bold;
+      }
+
+      .btn:hover {
+        background: #1d4ed8;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="form-container">
+       <h2>User Registration</h2>
+
+      <form action="backend/add_user.php" method="POST">
+        <div class="input-group">
+          <label>Full Name</label>
+          <input type="text" name="full_name" placeholder="Enter your name" required />
+        </div>
+
+        <div class="input-group">
+          <label>Phone Number</label>
+          <input type="tel" placeholder="Enter phone number" required name="phone_number"/>
+        </div>
+
+        <div class="input-group">
+          <label>Email Address</label>
+          <input type="email" placeholder="Enter email" required name="email" />
+        </div>
+
+          <div class="input-group">
+          <label>Password</label>
+          <input type="password" placeholder="Enter Password" required name="password" />
+        </div>
+
+         <div class="input-group">
+         <label>Confirm Password</label>
+
+         <input
+        type="password"
+        name="confirm_password"
+        placeholder="Confirm password"
+        required />
+   
+      </div>
+
+        <div class="input-group">
+          <label>Gender</label>
+          <select required name="gender">
+            <option value="">Select Gender</option>
+            <option value="MALE">Male</option>
+            <option value="FEMALE">Female</option>
+          </select>
+        </div>
+
+        <button type="submit" class="btn">Register</button>
+      </form>
+    </div>
+  </body>
+</html>

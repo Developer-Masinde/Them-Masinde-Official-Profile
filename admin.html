@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Admin - Prayer Requests | PEFA Soweto Cathedral</title>
+<style>
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #0a0e17;
+    color: white;
+    min-height: 100vh;
+  }
+  .top-bar {
+    background: #0f172a;
+    border-bottom: 2px solid gold;
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .top-bar h1 {
+    color: gold;
+    font-size: 1.4rem;
+    margin: 0;
+  }
+  .top-bar button {
+    background: transparent;
+    border: 2px solid gold;
+    color: gold;
+    padding: 8px 18px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+  }
+  .top-bar button:hover {
+    background: gold;
+    color: black;
+  }
+
+  /* LOGIN SCREEN */
+  #login-screen {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 90vh;
+    padding: 20px;
+  }
+  #login-box {
+    background: #0f172a;
+    border: 2px solid gold;
+    border-radius: 15px;
+    padding: 35px;
+    width: 100%;
+    max-width: 380px;
+    text-align: center;
+  }
+  #login-box h2 {
+    color: gold;
+    margin-top: 0;
+  }
+  #login-box input {
+    width: 100%;
+    padding: 12px;
+    margin-top: 10px;
+    border-radius: 8px;
+    border: none;
+  }
+  #login-box button {
+    width: 100%;
+    margin-top: 18px;
+    padding: 12px;
+    background: gold;
+    color: black;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+  }
+  #login-box button:hover {
+    background: #e6c200;
+  }
+  #login-error {
+    color: #ff6b6b;
+    margin-top: 12px;
+    font-size: 0.9rem;
+    min-height: 1.2em;
+  }
+
+  /* DASHBOARD */
+  #dashboard {
+    display: none;
+    padding: 25px;
+  }
+  .toolbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+  .toolbar input {
+    padding: 10px 14px;
+    border-radius: 8px;
+    border: none;
+    min-width: 220px;
+  }
+  .toolbar button {
+    background: #0f172a;
+    border: 2px solid gold;
+    color: gold;
+    padding: 10px 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+  }
+  .toolbar button:hover {
+    background: gold;
+    color: black;
+  }
+  #count-label {
+    color: #cbd5e1;
+    font-size: 0.95rem;
+  }
+
+  .table-wrapper {
+    overflow-x: auto;
+    border: 2px solid gold;
+    border-radius: 12px;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 700px;
+  }
+  th, td {
+    padding: 12px 14px;
+    text-align: left;
+    border-bottom: 1px solid #24304a;
+    vertical-align: top;
+  }
+  th {
+    background: #0f172a;
+    color: gold;
+    position: sticky;
+    top: 0;
+  }
+  tr:hover td {
+    background: #111c30;
+  }
+  td.request-cell {
+    max-width: 320px;
+    white-space: pre-wrap;
+  }
+  .status-badge {
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: bold;
+  }
+  .status-pending {
+    background: #7c5c00;
+    color: gold;
+  }
+  .status-done {
+    background: #14532d;
+    color: #86efac;
+  }
+  .status-select {
+    background: #1f2937;
+    color: white;
+    border: 1px solid gold;
+    border-radius: 6px;
+    padding: 4px;
+  }
+  #loading, #empty-state {
+    text-align: center;
+    padding: 40px;
+    color: #94a3b8;
+  }
+</style>
+</head>
+<body>
+
+  <div class="top-bar">
+    <h1>⛪ Prayer Requests Admin</h1>
+    <button id="logout-btn" style="display:none;">Log Out</button>
+  </div>
+
+  <!-- LOGIN SCREEN -->
+  <div id="login-screen">
+    <div id="login-box">
+      <h2>Admin Login</h2>
+      <input type="email" id="login-email" placeholder="Admin email" />
+      <input type="password" id="login-password" placeholder="Password" />
+      <button id="login-btn">Log In</button>
+      <div id="login-error"></div>
+    </div>
+  </div>
+
+  <!-- DASHBOARD -->
+  <div id="dashboard">
+    <div class="toolbar">
+      <input type="text" id="search-box" placeholder="Search by name or phone..." />
+      <div style="display:flex; gap:10px; align-items:center;">
+        <span id="count-label"></span>
+        <button id="refresh-btn">↻ Refresh</button>
+      </div>
+    </div>
+
+    <div class="table-wrapper">
+      <table>
+        <thead>
+          <tr>
+            <th>Date</th>
+            <th>Name</th>
+            <th>Phone</th>
+            <th>Email</th>
+            <th>Request</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody id="requests-body"></tbody>
+      </table>
+    </div>
+
+    <div id="loading" style="display:none;">Loading...</div>
+    <div id="empty-state" style="display:none;">No prayer requests found.</div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+  <script>
+    // Same project credentials as your main site
+    const SUPABASE_URL = "https://eflulwsoskktjbejdlck.supabase.co";
+    const SUPABASE_ANON_KEY = "sb_publishable_3CjEYG7Fkq19NtLCylGXMA_lTEImEuR";
+    const supabaseClient = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+
+    const TABLE_NAME = "soweto_pefa_prayer_requests";
+
+    const loginScreen = document.getElementById("login-screen");
+    const dashboard = document.getElementById("dashboard");
+    const logoutBtn = document.getElementById("logout-btn");
+    const loginError = document.getElementById("login-error");
+    let allRequests = [];
+
+    // ---- LOGIN ----
+    document.getElementById("login-btn").addEventListener("click", async () => {
+      const email = document.getElementById("login-email").value.trim();
+      const password = document.getElementById("login-password").value;
+      loginError.textContent = "";
+
+      const { data, error } = await supabaseClient.auth.signInWithPassword({ email, password });
+
+      if (error) {
+        loginError.textContent = "Login failed: " + error.message;
+        return;
+      }
+      showDashboard();
+    });
+
+    // ---- LOGOUT ----
+    logoutBtn.addEventListener("click", async () => {
+      await supabaseClient.auth.signOut();
+      location.reload();
+    });
+
+    // ---- CHECK EXISTING SESSION ON LOAD ----
+    async function checkSession() {
+      const { data } = await supabaseClient.auth.getSession();
+      if (data.session) {
+        showDashboard();
+      }
+    }
+    checkSession();
+
+    function showDashboard() {
+      loginScreen.style.display = "none";
+      dashboard.style.display = "block";
+      logoutBtn.style.display = "inline-block";
+      fetchRequests();
+    }
+
+    // ---- FETCH REQUESTS ----
+    async function fetchRequests() {
+      document.getElementById("loading").style.display = "block";
+      document.getElementById("empty-state").style.display = "none";
+
+      const { data, error } = await supabaseClient
+        .from(TABLE_NAME)
+        .select("*")
+        .order("created_at", { ascending: false });
+
+      document.getElementById("loading").style.display = "none";
+
+      if (error) {
+        alert("Failed to load requests: " + error.message);
+        console.error(error);
+        return;
+      }
+
+      allRequests = data || [];
+      renderTable(allRequests);
+    }
+
+    // ---- RENDER TABLE ----
+    function renderTable(rows) {
+      const tbody = document.getElementById("requests-body");
+      tbody.innerHTML = "";
+      document.getElementById("count-label").textContent = rows.length + " total";
+
+      if (rows.length === 0) {
+        document.getElementById("empty-state").style.display = "block";
+        return;
+      }
+      document.getElementById("empty-state").style.display = "none";
+
+      rows.forEach((row) => {
+        const tr = document.createElement("tr");
+        const dateStr = row.created_at
+          ? new Date(row.created_at).toLocaleString()
+          : "-";
+
+        tr.innerHTML = `
+          <td>${dateStr}</td>
+          <td>${escapeHtml(row.name || "-")}</td>
+          <td>${escapeHtml(row.phone || "-")}</td>
+          <td>${escapeHtml(row.email || "-")}</td>
+          <td class="request-cell">${escapeHtml(row.request || "-")}</td>
+          <td>${statusBadge(row.status)}</td>
+        `;
+        tbody.appendChild(tr);
+      });
+    }
+
+    function statusBadge(status) {
+      if (status === "done" || status === "prayed for") {
+        return `<span class="status-badge status-done">Prayed For</span>`;
+      }
+      return `<span class="status-badge status-pending">Pending</span>`;
+    }
+
+    function escapeHtml(str) {
+      const div = document.createElement("div");
+      div.textContent = str;
+      return div.innerHTML;
+    }
+
+    // ---- SEARCH ----
+    document.getElementById("search-box").addEventListener("input", (e) => {
+      const term = e.target.value.toLowerCase();
+      const filtered = allRequests.filter(
+        (r) =>
+          (r.name || "").toLowerCase().includes(term) ||
+          (r.phone || "").toLowerCase().includes(term)
+      );
+      renderTable(filtered);
+    });
+
+    // ---- REFRESH ----
+    document.getElementById("refresh-btn").addEventListener("click", fetchRequests);
+  </script>
+</body>
+</html>

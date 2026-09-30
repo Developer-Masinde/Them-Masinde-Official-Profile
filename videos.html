@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    background:#383535;
+    color:white;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+/* Video Gallery */
+#video-container{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:15px;
+    padding:20px;
+    background:black;
+ 
+}
+#video-container :hover{
+    
+    cursor: pointer;
+}
+
+
+/* Each video box */
+.video-card{
+    width:100%;
+    background:#111;
+    border:2px solid gold;
+    border-radius:10px;
+    overflow:hidden;
+}
+
+/* Video fits perfectly inside the box */
+  .video-card video{
+    width:100%;
+    height:250px;
+    object-fit:contain;
+    background:black;
+    display:block;
+}
+/* Mobile */
+@media(max-width:900px){
+    #video-container{
+        grid-template-columns:repeat(2,1fr);
+    }
+}
+
+@media(max-width:600px){
+    #video-container{
+        grid-template-columns:1fr;
+    }
+
+    .video-card video{
+        height:220px;
+    }
+}
+
+     .footer {
+        background: rgb(71, 63, 14);
+        color: white;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        padding: 50px;
+      }
+
+      #copy {
+        align-items: center;
+        justify-content: center;
+        display: flex;
+        background-color: gold;
+        color: black;
+      }
+       
+ h1 {
+    align-items: center;
+    justify-content: center;
+    display: flex;
+
+ }
+
+    </style>
+</head>
+<body>
+    <h1>Soweto Pefa Cathedral Video Archives</h1>
+     
+   <div id="video-container">
+     <div class="video-card">
+    <video controls>
+        <source src="./worshippers.mp4" type="video/mp4">
+    </video>
+   </div>
+     <div class="video-card">
+    <video controls>
+        <source src="Masinde-Interview@INCEPTOR.mp4" type="video/mp4">
+    </video>
+   </div>
+     <div class="video-card">
+    <video controls>
+        <source src="./pianist.mp4" type="video/mp4">
+    </video>
+   </div>
+     <div class="video-card">
+    <video controls>
+        <source src="./worshippers.mp4" type="video/mp4">
+    </video>
+   </div>
+     <div class="video-card">
+    <video controls>
+        <source src="./worshippers.mp4" type="video/mp4">
+    </video>
+   </div>
+     <div class="video-card">
+    <video controls>
+        <source src="./worshippers.mp4" type="video/mp4">
+    </video>
+   </div>
+     <div class="video-card">
+    <video controls>
+        <source src="./worshippers.mp4" type="video/mp4">
+    </video>
+   </div>
+     <div class="video-card">
+    <video controls>
+        <source src="./worshippers.mp4" type="video/mp4">
+    </video>
+   </div>
+     <div class="video-card">
+    <video controls>
+        <source src="./worshippers.mp4" type="video/mp4">
+    </video>
+   </div>
+   </div>
+
+
+        <footer class="footer">
+      <div>
+        <h3>PEFA SOWETO CHURCH CATHEDRAL</h3>
+        <p>Winning Souls and Building Disciples.</p>
+      </div>
+
+      <div>
+        <h3>Contact Us</h3>
+        <p>0721349697</p>
+        <p>info@pefasoweto.org</p>
+      </div>
+
+      <div>
+        <h3>Service Times</h3>
+        <p>Sunday 8:00 AM</p>
+        <p>Sunday 10:30 AM</p>
+      </div>
+    </footer>
+
+    <hr />
+    <div id="copy">
+      &copy; <b>2026:Masinde the Developer.All rights reserved.</b>
+    </div>
+
+ 
+</body>
+</html>

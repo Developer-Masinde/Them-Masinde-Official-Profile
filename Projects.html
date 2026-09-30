@@ -1,0 +1,298 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        font-family:
+          "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans",
+          Arial, sans-serif;
+        background-image: url("smartBlue\ background\ image.jpg");
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+      }
+      .container-1 {
+        display: none; /*THIS TO HIDE CONTAINER UNTIL VIEW PROJECT BUTTON CLICKED */
+        grid-template-columns: repeat(4, 1fr);
+        gap: 30px;
+        background-image: url("./Cool-webBackground.jpg");
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        flex-wrap: wrap;
+        /* MAKE THE CONATINER OCCUPY ENTIRE SCREEN UPON CLICKING VIEW PROJECTS */
+        height: 50vh;
+        width: 100%;
+      }
+
+      .MORE-B h3 {
+        display: inline-block;
+        color: white;
+      }
+      .MORE h3 {
+        display: inline-block;
+        color: white;
+      }
+
+      .MORE2 h3 {
+        display: inline-block;
+        color: white;
+      }
+      .MORE3 h3 {
+        display: inline-block;
+        color: white;
+      }
+      .MORE4 h3 {
+        display: inline-block;
+        color: white;
+      }
+
+      /* More styling effect on lAST CONTAINER */
+      .MORE-B,
+      .MORE,
+      .MORE2,
+      .MORE3,
+      .MORE4 {
+        border: 2px solid gold;
+        border-radius: 15px;
+        padding: 10px;
+        width: 200px;
+        text-align: center;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        transition: all 0.3s ease;
+        cursor: pointer;
+        backdrop-filter: blur(5px);
+      }
+      .MORE-B:hover,
+      .MORE:hover,
+      .MORE2:hover,
+      .MORE3:hover,
+      .MORE4:hover {
+        transform: translateY(-10px) scale(1.03);
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+      }
+      .MORE-B ul,
+      .MORE ul,
+      .MORE2 ul,
+      .MORE3 ul,
+      .MORE4 ul {
+        list-style: none;
+        padding: 0;
+      }
+      .MORE-B button,
+      .MORE button,
+      .MORE2 button,
+      .MORE3 button,
+      .MORE4 button {
+        margin-top: 5px;
+        padding: 5px 10px;
+        border-radius: 50%;
+        cursor: pointer;
+        height: 60px;
+        width: 60px;
+        border: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 15px;
+        color: rgb(10, 39, 10);
+        font-weight: bolder;
+        background-color: rgb(177, 125, 58);
+        cursor: pointer;
+        transition: 0.3s;
+      }
+
+      #copy {
+        text-align: center;
+        margin-top: 20px;
+        padding: 15px;
+        color: white;
+        background-color: rgba(0, 0, 0, 0.5);
+        width: fit-content;
+        margin-left: auto;
+        margin-right: auto;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        font-weight: bold;
+      }
+
+      /* addition changes */
+      /* MAKING PARTS OF THE CONTAINER-1 HAVE DISTINCT BACKGROUND IMAGE COLOURS */
+      .container-1 .MORE-B {
+        background-image: url("./BOOK\ COVER.jpg");
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+      }
+      .container-1 .MORE {
+        background-image: url("./coffeeNiceBackground.jpg");
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+      }
+      .container-1 .MORE2 {
+        background-image: url("./calc-Backgrouind.jpg");
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+      }
+      .container-1 .MORE3 {
+        background-image: url("./churcBestBackground.jpg");
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+      }
+      .container-1 .MORE4 {
+        background-image: url("./lodgingBackground.jpg");
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+      }
+      /* HERO-SECTION */
+      .hero h2 {
+        margin-top: 10px;
+        font-size: 2rem;
+        color: gold;
+        letter-spacing: 2px;
+        animation: glow 2s infinite alternate;
+      }
+
+      @keyframes glow {
+        from {
+          text-shadow: 0 0 10px gold;
+        }
+
+        to {
+          text-shadow:
+            0 0 20px gold,
+            0 0 40px gold;
+        }
+      }
+
+      .hero h1 {
+        color: gold;
+      }
+      .hero .intro {
+        color: white;
+        font-size: 1.4rem;
+        text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+        style: italic;
+      }
+
+      .contact-btn {
+        display: inline-block;
+        padding: 12px 25px;
+        margin: 10px;
+        background: gold;
+        color: black;
+        text-decoration: none;
+        border-radius: 30px;
+        font-weight: bold;
+        transition: 0.3s;
+      }
+
+      .contact-btn:hover {
+        transform: scale(1.05);
+      }
+    </style>
+  </head>
+  <!-- HERO-javascript -->
+  <script>
+    function showProjects() {
+      const projects = document.getElementById("projects");
+      const hero = document.querySelector(".hero");
+
+      hero.style.display = "none";
+      projects.style.display = "flex";
+
+      projects.scrollIntoView({
+        behavior: "smooth",
+      });
+    }
+  </script>
+  <body>
+    <div class="hero">
+      <h1>Hi, I’m Masinde 👋</h1>
+
+      <p class="intro">
+        Full Stack Developer building modern and responsive web experiences.
+      </p>
+
+      <h2>WELCOME TO VIEW MY PROJECTS</h2>
+
+      <div class="hero-buttons">
+        <button onclick="showProjects()">View Projects</button>
+        <a
+          href="https://mail.google.com/mail/?view=cm&fs=1&to=otingajoel@gmail.com"
+          target="_blank"
+          class="contact-btn"
+        >
+          SEND E-MAIL
+        </a>
+      </div>
+    </div>
+
+    <div class="container-1" id="projects">
+      <div class="MORE-B">
+        <h3><b>MASINDE📑BOOK📔</b></h3>
+
+        <ul>
+          <li>
+            <a href="./Homepage.html"
+              ><button><b>VIEW</b></button></a
+            >
+          </li>
+        </ul>
+      </div>
+      <div class="MORE">
+        <h3><b>COFFEE RESTAURANT</b></h3>
+
+        <ul>
+          <li>
+            <a href="coffee.html"
+              ><button><b>VIEW</b></button></a
+            >
+          </li>
+        </ul>
+      </div>
+      <div class="MORE2">
+        <h3>CALCULATOR</h3>
+        <ul>
+          <li>
+            <a href="calc.html"
+              ><b><button>VIEW</button></b></a
+            >
+          </li>
+        </ul>
+      </div>
+      <div class="MORE3">
+        <h3>CHURCH-WEBSITE</h3>
+        <ul>
+          <li>
+            <a href="church.html"
+              ><b><button>VIEW</button></b></a
+            >
+          </li>
+        </ul>
+      </div>
+      <div class="MORE4">
+        <h3>LODGING-WEBSITE</h3>
+        <ul>
+          <li>
+            <a href="lodge.html"
+              ><button><b>VIEW</b></button></a
+            >
+          </li>
+        </ul>
+      </div>
+    </div>
+    <hr />
+    <div id="copy">
+      <b> &copy; 2026 Masinde the Developer. All rights reserved.</b>
+    </div>
+  </body>
+</html>

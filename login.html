@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>PEFA Soweto Cathedral | Admin Login</title>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+    <script src="../supabase.js"></script>
+<style>
+    /* =====================================================
+   PEFA SOWETO CATHEDRAL
+   ADMIN LOGIN
+===================================================== */
+
+* {
+    box-sizing: border-box;
+}
+
+
+/* =====================================================
+   PAGE
+===================================================== */
+
+body {
+    margin: 0;
+    padding: 0;
+
+    min-height: 100vh;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    background:
+        radial-gradient(
+            circle at top,
+            #18233a 0%,
+            #0f172a 45%,
+            #020617 100%
+        );
+
+    color: white;
+
+    overflow-x: hidden;
+}
+
+
+/* =====================================================
+   LOGIN CONTAINER
+===================================================== */
+
+#login-screen {
+
+    min-height: 100vh;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    padding: 20px;
+
+}
+
+
+/* =====================================================
+   LOGIN CARD
+===================================================== */
+
+#login-box {
+
+    width: 100%;
+
+    max-width: 380px;
+
+    padding: 35px 30px 30px;
+
+    background:
+        rgba(15, 23, 42, 0.97);
+
+    border: 2px solid gold;
+
+    border-radius: 18px;
+
+    text-align: center;
+
+    box-shadow:
+        0 0 20px rgba(255, 215, 0, 0.18),
+        0 0 45px rgba(255, 215, 0, 0.08);
+
+}
+
+
+/* =====================================================
+   LOGO
+===================================================== */
+
+#login-box img {
+
+    width: 90px;
+
+    height: 90px;
+
+    object-fit: cover;
+
+    border-radius: 50%;
+
+    border: 2px solid gold;
+
+    display: block;
+
+    margin: 0 auto 18px;
+
+    box-shadow:
+        0 0 15px rgba(255, 215, 0, 0.45);
+
+}
+
+
+/* =====================================================
+   TITLE
+===================================================== */
+
+#login-box h2 {
+
+    margin: 0;
+
+    color: gold;
+
+    font-size: 1.7rem;
+
+    font-weight: bold;
+
+}
+
+
+/* =====================================================
+   SUBTITLE
+===================================================== */
+
+#login-box > p {
+
+    color: #e2e8f0;
+
+    margin-top: 12px;
+
+    margin-bottom: 20px;
+
+    font-size: 1rem;
+
+}
+
+
+/* =====================================================
+   LOGIN FORM
+===================================================== */
+
+#login-form {
+
+    width: 100%;
+
+}
+
+
+/* =====================================================
+   INPUTS
+===================================================== */
+
+#login-box input {
+
+    width: 100%;
+
+    height: 48px;
+
+    padding: 12px 14px;
+
+    margin-top: 12px;
+
+    background: white;
+
+    color: #111827;
+
+    border: 2px solid transparent;
+
+    border-radius: 9px;
+
+    outline: none;
+
+    font-size: 15px;
+
+    transition: 0.3s;
+
+}
+
+
+#login-box input::placeholder {
+
+    color: #64748b;
+
+}
+
+
+#login-box input:focus {
+
+    border-color: gold;
+
+    box-shadow:
+        0 0 10px rgba(255, 215, 0, 0.3);
+
+}
+
+
+/* =====================================================
+   LOGIN BUTTON
+===================================================== */
+
+#login-box button {
+
+    width: 100%;
+
+    height: 46px;
+
+    margin-top: 18px;
+
+    padding: 10px;
+
+    background: gold;
+
+    color: #000;
+
+    border: none;
+
+    border-radius: 9px;
+
+    font-size: 16px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+
+}
+
+
+#login-box button:hover {
+
+    background: #ffd900;
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 5px 18px rgba(255, 215, 0, 0.35);
+
+}
+
+
+#login-box button:active {
+
+    transform: scale(0.98);
+
+}
+
+
+#login-box button:disabled {
+
+    opacity: 0.7;
+
+    cursor: not-allowed;
+
+    transform: none;
+
+}
+
+
+/* =====================================================
+   ERROR MESSAGE
+===================================================== */
+
+#login-error {
+
+    min-height: 20px;
+
+    margin-top: 14px;
+
+    margin-bottom: 10px;
+
+    color: #ff6b6b !important;
+
+    font-size: 0.9rem;
+
+    line-height: 1.4;
+
+}
+
+
+/* =====================================================
+   RETURN TO WEBSITE
+===================================================== */
+
+.return-link {
+
+    display: inline-block;
+
+    margin-top: 15px;
+
+    color: gold;
+
+    text-decoration: none;
+
+    font-size: 0.9rem;
+
+    transition: 0.3s;
+
+}
+
+
+.return-link:hover {
+
+    color: white;
+
+    text-decoration: underline;
+
+}
+
+
+/* =====================================================
+   MOBILE RESPONSIVE
+===================================================== */
+
+@media (max-width: 480px) {
+
+    #login-screen {
+
+        padding: 15px;
+
+    }
+
+
+    #login-box {
+
+        max-width: 360px;
+
+        padding: 30px 22px 25px;
+
+        border-radius: 16px;
+
+    }
+
+
+    #login-box img {
+
+        width: 80px;
+
+        height: 80px;
+
+    }
+
+
+    #login-box h2 {
+
+        font-size: 1.5rem;
+
+    }
+
+
+    #login-box input {
+
+        height: 46px;
+
+        font-size: 14px;
+
+    }
+
+
+    #login-box button {
+
+        height: 46px;
+
+        font-size: 15px;
+
+    }
+
+}
+
+
+/* =====================================================
+   VERY SMALL PHONES
+===================================================== */
+
+@media (max-width: 350px) {
+
+    #login-box {
+
+        padding: 25px 18px 22px;
+
+    }
+
+
+    #login-box img {
+
+        width: 70px;
+
+        height: 70px;
+
+    }
+
+
+    #login-box h2 {
+
+        font-size: 1.35rem;
+
+    }
+
+}
+</style>
+</head>
+
+
+<body>
+
+<div id="login-screen">
+
+    <div id="login-box">
+
+        <img
+            src="../MASINDE GOLD.png"
+            width="90"
+            alt="Admin Logo"
+        >
+
+        <h2>Admin Login</h2>
+
+        <p>PEFA Soweto Cathedral</p>
+
+
+        <form id="login-form">
+
+            <input
+                type="email"
+                id="email"
+                placeholder="Admin Email"
+                autocomplete="email"
+                required
+            >
+
+
+            <input
+                type="password"
+                id="password"
+                placeholder="Password"
+                autocomplete="current-password"
+                required
+            >
+
+
+            <button
+                type="submit"
+                id="login-btn"
+            >
+                Login
+            </button>
+
+        </form>
+
+
+        <p id="login-error"></p>
+
+
+        <a
+            href="../index.html"
+            class="return-link"
+        >
+            ← Return to Website
+        </a>
+
+    </div>
+
+</div>
+
+
+
+<script>
+
+const loginForm =
+    document.getElementById("login-form");
+
+const loginError =
+    document.getElementById("login-error");
+
+const loginButton =
+    document.getElementById("login-btn");
+
+
+loginForm.addEventListener(
+    "submit",
+    async function(event) {
+
+        event.preventDefault();
+
+
+        const email =
+            document
+                .getElementById("email")
+                .value
+                .trim();
+
+
+        const password =
+            document
+                .getElementById("password")
+                .value;
+
+
+        loginError.textContent = "";
+
+
+        if (!email || !password) {
+
+            loginError.textContent =
+                "Please enter your email and password.";
+
+            return;
+
+        }
+
+
+        loginButton.disabled = true;
+
+        loginButton.textContent =
+            "Logging in...";
+
+
+        try {
+
+            const {
+                data,
+                error
+            } = await supabaseClient.auth
+                .signInWithPassword({
+
+                    email: email,
+
+                    password: password
+
+                });
+
+
+            if (error) {
+
+                console.error(
+                    "Supabase Login Error:",
+                    error
+                );
+
+
+                loginError.textContent =
+                    "Login failed. Please check your email and password.";
+
+                return;
+
+            }
+
+
+            console.log(
+                "Login successful:",
+                data
+            );
+
+
+            /*
+             * IMPORTANT:
+             * Only authenticated users reach
+             * the dashboard.
+             */
+
+            window.location.href =
+                "dashboard.html";
+
+        }
+
+        catch (error) {
+
+            console.error(error);
+
+            loginError.textContent =
+                "Something went wrong. Please try again.";
+
+        }
+
+        finally {
+
+            loginButton.disabled = false;
+
+            loginButton.textContent =
+                "Login";
+
+        }
+
+    }
+
+);
+
+</script>
+
+</body>
+</html>
+

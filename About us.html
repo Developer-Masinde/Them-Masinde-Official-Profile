@@ -1,0 +1,431 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+      body {
+        background-image: url("coffee\ beans\ in\ large\ spread.jpg");
+      }
+        h1 {
+        align-items: center;
+        justify-content: center;
+        color: aliceblue;
+        background-color: black;
+        align-items: center;
+        justify-content: center;
+        display: flex;
+
+       }
+      #nav-bar {
+        background-color: rgb(14, 7, 2);
+          position: sticky;
+        top: 0; /* Stays at 0 pixels from the top of the viewport */
+        width: 100%; /* Ensures it spans the full width of the screen */
+        z-index: 1000; /* Ensures it stays above other content */
+      }
+
+      #nav-bar ul,
+      li,
+      a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 10px 16px;
+        color: chocolate;
+        justify-self: right;
+        list-style-type: none;
+        text-decoration: none;
+      }
+      #nav-bar :hover {
+        cursor: pointer;
+        color: rgb(194, 152, 122);
+      }
+
+           #imgfst {
+            justify-self: center;
+           }
+        #container {
+          
+          grid-template-columns: repeat(3,1fr);
+         
+          display: grid;
+          gap: 40px;
+          margin-left: 15%;
+
+        }
+        #container h2 {
+          color: rgb(250, 89, 8);
+          background-color: black;
+          align-items: center;
+          justify-content: center;
+          display: flex;
+          font-size: xx-large ;
+          
+        }
+        #container p {
+          color: rgb(15, 15, 14);
+          background-color: gray;
+          font-size: xx-large;
+        }
+        #table {
+          background-color: rgb(73, 32, 3);
+        }
+      
+    
+
+      
+       #part1 h2,h3 {
+          color: rgb(8, 8, 8);
+        }
+        #container2 {
+          display: grid;
+      
+        gap: 20px;
+        padding: 80px;
+        grid-template-columns: repeat(3, 1fr);
+        height: auto;
+        width: auto;
+      }
+      #part1{
+        background-color:rgb(109, 108, 108) ;
+         border-radius: 20px;
+
+      }
+      #part1 h1 {
+        color: white;
+        margin-top: 80px;
+        text-align: center;
+        align-items: center;
+        justify-content: center;
+
+      }
+      #part2 img {
+        object-fit: cover;
+        display: block;
+        width: 100%;
+        height: 100%;
+        border-radius: 20px;
+        align-items: center;
+        justify-content: center;
+      }
+       #part3 {
+        padding: 50px;
+        background-color:rgb(85, 80, 77) ;
+         border-radius: 20px;
+       }
+        
+      #part3  {
+        color: white;
+         font-size:xx-large;
+      }
+             #footer,h6{
+        background-color: rgb(184, 123, 80);
+        color: rgb(12, 11, 9);
+        align-items: center;
+        justify-content: left;
+        display: flex;
+       }
+       #hr {
+        color: white;
+        background-color: rgb(126, 63, 18);
+     
+       }
+       h6 {
+        color: aliceblue;
+       }
+
+       
+               #footer {
+        background-color: black;
+        color: white;
+        align-items: center;
+        justify-content: left;
+        display: flex;
+       }
+        #container-foot {
+             grid-template-columns: repeat(4,1fr);
+          display: grid;
+          gap: 40px;
+          margin-left: 40px; 
+        }
+         #point-one {
+          background-color: rgb(250, 117, 22);
+         }
+        #point-socials {
+          background-color: rgb(129, 57, 5);
+        }
+       #point-three {
+        background-color: rgb(134, 90, 58);
+       }
+        
+      #Contact {
+        background-color: rgb(61, 26, 2);
+      } 
+      #hr {
+        align-items: center;
+        justify-content: center;
+        display:block;
+        background-color: white;
+        color: black;
+        padding-left: 40%  ;
+      }
+
+      /* Rainbow cursor dots */
+.cursor-dot {
+  position: fixed;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9999;
+  mix-blend-mode: difference;
+  transition: transform 0.1s linear;
+}
+  To hide default cursor */
+body {
+  cursor: none;
+}
+
+/* MAKE IT RESPONSIVE MAKE IT RESPONSIVE */
+  * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* NAVBAR */
+#nav-bar ul {
+  display: flex;
+  justify-content: space-around;
+  list-style: none;
+  background: black;
+  padding: 15px;
+}
+
+#nav-bar a {
+  color: white;
+  text-decoration: none;
+}
+
+/* HERO TEXT */
+h1 {
+  text-align: center;
+  margin: 20px;
+}
+
+/* IMAGES */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* ABOUT SECTION */
+#container {
+  display: flex;
+  gap: 20px;
+  padding: 20px;
+  align-items: center;
+}
+
+/* SECOND SECTION */
+#container2 {
+  display: flex;
+  gap: 20px;
+  padding: 20px;
+}
+
+/* FOOTER */
+#container-foot {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 20px;
+  background: #222;
+  color: white;
+}
+
+/* 🔥 MOBILE RESPONSIVENESS */
+@media (max-width: 768px) {
+
+  #nav-bar ul {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  #container {
+    flex-direction: column;
+  }
+
+  #container2 {
+    flex-direction: column;
+  }
+
+  #container-foot {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  h1 {
+    font-size: 20px;
+  }
+}
+
+
+
+    </style>
+  </head>
+  <body>
+           <div id="nav-bar">
+
+    <div class="logo">KAJOINT ☕</div>
+
+    <div id="menu-toggle">
+        ☰
+    </div>
+
+    <ul id="nav-links">
+        <li><a href="coffee.html">HOME</a></li>
+        <li><a href="about us.html">ABOUT US</a></li>
+        <li><a href="product.html">PRODUCTS</a></li>
+        <li><a href="branches.html">BRANCHES</a></li>
+    </ul>
+
+</div>
+       <h1><b>The Best Kajoint for your sip anytime</b></h1>
+         <div id="imgfst">
+                <img src="../images/man drinkings something like coffee in a mug.jpg" alt="" width="200" height="150">
+                        
+         </div>
+
+    <div id="container">
+              
+      <img
+        src="./coffee name printed on shelf.jpg"
+        alt="" 
+        width="540"
+        height="450"
+       
+      />
+
+        <div>
+              <h2>About Us</h2>
+               <p>     The Coffee Kajoint is an established restaurant purposely aimed at enriching the diet of every person with the best coffee test of all time.
+              We have track record of the leading best coffee making in the industry echoeing beyond the borders of our nation.</p>
+
+        </div>
+    </div>
+
+<div id="container2">
+  
+  <div id="part1">
+         <h1><b>Form Ya Coffee Kajoint</b></h1>
+          <h2>Our Vision</h2>
+       <p> To improve the healthy living of every human being.
+       </p>
+       <br>
+       <h3>Our Mission</h3>
+       <p>Transform every mind on view about coffee positively</p>
+       <br>
+       <h4>Our Core values</h4>
+           <table id="table">
+            <tr>
+              <td>Excellence</td>
+            </tr>
+            <tr>
+              <td>Innovation</td>
+            </tr>
+            <tr>
+              <td>Integrity</td>
+            </tr>
+           </table>
+  </div>
+
+  <div id="part2">
+    <img src="./coffee processing.jpg" alt=""  width="450" height="200">
+
+  </div>
+
+  <div id="part3">
+       <h5><b>Clients Feedback</b></h5>
+       <form action="">
+       <label for="">Name</label>
+       <input type="text"> <br>
+       <label for="">Male</label>
+        <input type="radio">
+        <label for="">Female</label>
+        <input type="radio"> <br>
+        <label for="">Phone Number</label>
+        <input type="number"> <br>
+       <label for="">Branch Served</label>
+         <select name="" id="">
+          <option value="">Nairobi Agakhan Coffee Kajoint</option>
+          <option value="">Nairobi UpperHill Coffee Kajoint</option>
+          <option value="">Kisumu Milimani Coffee Kajoint</option>
+          <option value="">Kilifi Waswahili Coffee Kajoint</option>
+          <option value="">Naivasha Lake Elementaita Coffee Kajoint</option>
+          <option value="">Kericho Gold Coffee Kajoint</option>
+          
+         </select> <br>
+         <label for="">Message</label><br>
+          <textarea name="" id=""></textarea>
+       
+
+       </form>
+
+  </div>
+</div>
+    
+    <footer>
+          <div id="footer">
+         <div id="container-foot">
+             <div id="point-one">  
+                <p><b>OPERATION HOURS</b></p>
+                Monday-Wednesday 8:00am - 10:00pm.
+                <br>
+                Thursday-Friday  9:00am - 10:00pm.
+                <br>
+                Saturday         10:00am -11;59pm.
+                <br>
+                We are closed on all National Holidays.
+
+             </div>
+                <div id="point-socials">
+                  <p><b>Our Social Media Handles</b>.</p>
+                
+        <a href=""><i class="fab fa-github"></i>Kajoint Developers</a>
+        <a href=""><i class="fab fa-facebook"> Sip Kajoint</i></a>
+        <a href=""><i class="fab fa-whatsapp"> +254716499037</i></a>
+        <a href=""><i class="fab fa-instagram"> @Kajoint Sip</i></a>
+       
+
+                </div>
+                <div id="point-three">
+                   <p><b>Quick Links</b></p>
+                   Home <br>
+                   Products <br>
+                   Branches <br>
+                   About-Us
+                </div>
+                <div id="Contact">
+                <p><b>Contct Info:</b></p>
+                    <br>
+                   Tell: +254716499037
+                   <br>
+                   Email: kajointcofee@gmail.com
+                   <br>
+                </div>
+         </div>     
+      </footer>
+
+  <div id="hr">
+     <hr> &copy; <b>Them Masinde Web Developer: 2026. </b>
+  </div>
+
+
+  </body>
+  <script src="./hamurgur.js"></script>
+</html>
